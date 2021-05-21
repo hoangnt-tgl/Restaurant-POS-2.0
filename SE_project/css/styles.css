@@ -205,6 +205,7 @@ animation
   }
 }
 
+/* ======================================= index.html ====================================================== */
 /*
 ================== 
 Header
@@ -444,4 +445,77 @@ footer
 
 .company {
   color: var(--clr-primary);
+}
+
+/* ======================================= login.html ====================================================== */
+.login {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/main-bcg.jpeg") center/cover no-repeat fixed;
+  position: relative;
+}
+
+.contact-form {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  max-width: 35rem;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.contact-form:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h3 {
+  padding-top: 1.25rem;
+  color: var(--clr-grey-5);
+}
+
+.form-group {
+  padding: 1rem 1.5rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  margin-bottom: 1.25rem;
+  background: var(--clr-grey-10);
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+
+.form-control::placeholder {
+  font-family: var(--ff-primary);
+  color: var(--clr-grey-1);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+
+.login-btn {
+  display: block;
+  margin: 1rem auto;
+  width: 50%;
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+@media screen and (min-width: 992px) {
+  .contact-form,
+  .contact-info {
+    float: left;
+    width: 50%;
+  }
+  .submit-btn {
+    width: 50%;
+    height: 50%;
+  }
 }
