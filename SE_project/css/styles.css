@@ -393,7 +393,7 @@ contact
  */
 
 .contact {
-  background: var(--clr-grey-10);
+  text-align: center;
 }
 
 .contact-info {
