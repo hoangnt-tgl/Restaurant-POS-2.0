@@ -600,3 +600,35 @@ footer
     font-size: 1.5rem;
   }
 }
+
+.emp-info {
+  background: var(--clr-grey-10);
+  height: 80vh;
+  width: 100vw;
+  margin: 4rem 0;
+  position: relative;
+}
+
+.avatar-container {
+  width: 10vw;
+  margin: auto;
+}
+
+.infos {
+  width: 80vw;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.read-only {
+  border: none;
+}
+.info {
+  display: block;
+  float: left;
+  width: 50%;
+  border: none;
+  margin: 0 auto;
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+}
