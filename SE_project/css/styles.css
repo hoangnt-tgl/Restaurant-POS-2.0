@@ -519,3 +519,84 @@ footer
     height: 50%;
   }
 }
+
+/* ======================================= employeePage.html ====================================================== */
+
+.employ-header {
+  height: 30vh;
+}
+
+.logo-container,
+.restaurant-name,
+.logout {
+  float: left;
+  width: 30%;
+}
+
+.logo-container,
+.restaurant-name {
+  margin-right: 3.333%;
+}
+
+.restaurant-name {
+  font-size: 1.3rem;
+  margin: 4rem 0;
+  font-size: 1rem;
+}
+.logo {
+  width: 100%;
+  max-width: 200px;
+}
+
+.logout {
+  text-align: right;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.logout-btn {
+  font-size: 0.5rem;
+}
+
+@media screen and (min-width: 576px) {
+  .restaurant-name {
+    font-size: 2rem;
+  }
+
+  .logout-btn {
+    font-size: 1rem;
+  }
+}
+.navbar {
+  margin: 2rem 0;
+}
+.navbar li {
+  display: inline;
+  text-align: center;
+}
+
+.nav-link {
+  display: block;
+  float: left;
+  width: 33.333%;
+  font-size: 0.875rem;
+  font-family: var(--ff-primary);
+  color: var(--clr-grey-5);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  background: var(--clr-primary-light);
+  color: var(--clr-white);
+}
+
+.active {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+@media screen and (min-width: 576px) {
+  .nav-link {
+    font-size: 1.5rem;
+  }
+}
