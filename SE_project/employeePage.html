@@ -15,7 +15,7 @@
         <a href="index.html" class = "logo-container"><img src="./images/logo.png" alt="restaurant's logo" class =" logo"></a>
         <h2 class = "restaurant-name">nova restaurant</h2>
         <div class="logout">
-            <button class="btn logout-btn"> Đăng xuất </button>
+            <a href="index.html"><button class="btn logout-btn"> Đăng xuất </button></a>
         </div>
     </header>
 
@@ -28,7 +28,31 @@
     </nav>
 
     <section class="emp-info">
-        
+        <div class="avatar-container">
+            <img src="./images/avatar.png" alt="emolyee's picture" class = "avatar">
+        </div>
+        <form action="" class="infos">
+            <fieldset disabled="disabled" class = "read-only">
+                <label for="name" class = "info">Name: </label>
+                <input type="text" name="name" placeholder="Le Chung Hoang" class = "info">
+                <br>
+                <br>
+                <label for="CMND" class = "info" >CMND/CCCD: </label>
+                <input type="text" name="CMND" placeholder = "123456789" class = "info">
+                <br>
+                <br>
+                <label for="phone"class = "info" >SDT: </label>
+                <input type="tel" name="phone" placeholder = "987654321" class = "info">
+                <br>
+                <br>
+                <label for="email" class = "info">Email: </label>
+                <input type="email" name="email" placeholder="email@hcmut.edu.vn" class = "info" />
+                <br>
+                <br>
+                <label for="job" class = "info">Chức vụ: </label>
+                <input type="text" name="job" placeholder = "Nhân viên" class = "info">
+            </fieldset>
+        </form>
     </section>
 </body>
 </html>
