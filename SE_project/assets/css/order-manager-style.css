@@ -12,26 +12,28 @@ html {
 }
 
 #header{
-    /* position: fixed; */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
 
     background-color: #000;
-    height: 46px;
+    height: 45.6px;
 }
 
-#nav{
+#nav {
     display: inline-block;
+    position: relative;
 }
 
 #nav > a {
     display: inline-block;
     text-decoration: none;
-    line-height: 46px;
+    line-height: 45.6px;
     padding: 0 24px;
     color: #fff;
     text-transform: uppercase;
+    list-style-type: none;
 }
 
 #nav a:hover{
@@ -40,6 +42,26 @@ html {
     color: #000;
 }
 
-#content{
+#nav .home-icon{
+    font-size: 20px;
+}
 
+#header .account-btn {
+    float: right;
+    padding: 0 21px;
+}
+
+#header .account-btn:hover {
+    cursor: pointer;
+    background-color: #f44336;
+}
+
+#header .account-icon {
+    color: #fff;
+    font-size: 20px;
+    line-height: 45.6px;
+}
+
+#content{
+    height: 2000px;
 }
