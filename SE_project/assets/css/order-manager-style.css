@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+}
+#main{
+
+}
+
+#header{
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: #000;
+    height: 46px;
+}
+
+#nav{
+    display: inline-block;
+}
+
+#nav > a {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav a:hover{
+    display: block;
+    background-color: #ccc;
+    color: #000;
+}
+
+#content{
+
+}
