@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tea Station || Manage</title>
+    <!-- font-awesome -->
+    
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="js/myscript.js"></script>
+</head>
+
+<body>
+
+
+    <!-- header -->
+    <header>
+        <div><img class="logo" src="images/logo.png" alt="Logo"></div>
+        <div class="name">nova restaurant</div>
+    </header>
+    <div class="menu">
+        <button class="btn3" href="menu.html">Quản lý tài khoản</button>
+        <button class="btn3">Nhà hàng</button>
+        <button class="btn3">Thông tin tài khoản</button>
+    </div>
+    <div id="myBtnContainer">
+        <button class="tablink" onclick="filterSelection('all')" id="defaultOpen">Tất cả</button>
+        <button class="tablink" onclick="filterSelection('tab1')">Nhân viên</button>
+        <button class="tablink" onclick="filterSelection('tab2')">Quản lý</button>
+        <button class="tablink">Thêm nhân viên</button>
+        <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    </div>  
+    
+    <div class="container" id="myMenu">
+        <div class="filterDiv tab1">
+            <li><a href="#">Nguyen Trong Hoang</a></li>
+        </div>
+        <div class="filterDiv  tab2">
+            <li><a href="#">Pham Cong Hau</a></li>
+        </div>
+        <div class="filterDiv tab1">
+            <li><a href="#">Nguyen Viet Huy</a></li>
+        </div>
+        <div class="filterDiv tab2">
+            <li><a href="#">Le Chung Hoang</a></li>
+        </div>
+        <div class="filterDiv tab1">
+            <li><a href="#">Nguyen The Huy</a></li>
+        </div>
+        
+        <div class="info" style="background-color:#ddd;">
+            <h2>Thông tin cá nhân</h2>
+              <div class="row">
+                  <div class="left">
+                      <img src="images/logo.png" alt="Avatar" style="max-width: 150px;">
+                  </div>
+                  <div class="right" style="background-color:#ddd;">
+                      <p>Ho va ten: <input type="text" onfocus="this.value=''" value="Nguyen Trong Hoang"></p>
+                      <p>Gioi tinh: <input type="text" onfocus="this.value=''" value="Nam"></p>
+                      <p>CMND: <input type="text" onfocus="this.value=''" value="123456789"></p>
+                      <p>SDT: <input type="text" onfocus="this.value=''" value="0945744***"></p>
+                      <p>Email: <input type="text" onfocus="this.value=''" value="email@gmail.com"></p>
+                      <p>Đia chi: <input type="text" onfocus="this.value=''" value=""></p>
+                  </div>
+              </div>
+            <h2>Thông tin đăng nhập</h2>
+              <p>Username: <input type="text" onfocus="this.value=''" value="Blabla"></p>
+              <p>Password: <input type="text" onfocus="this.value=''" value="****"></p>
+              <div class="row">
+                  <p>Chuc vu:</p>
+                  <div class="custom-select" style="width:200px;">
+                      <select>
+                        <option value="0">Quan ly</option>
+                        <option value="1">Nhan vien</option>
+                      </select>
+                  </div>               
+              </div>
+              <button class="btn">Save</button>
+        </div>
+    </div>
+
+
+    <div id="tab0" class="tabcontent">
+        <div class="container">
+            <div id="accountList" class="tabcontent">
+            <div class="row">
+                <div class="left" style="background-color:#bbb;">
+                  <ul id="myMenu">
+                    <li><a href="#">Nguyen Trong Hoang</a></li>
+                    <li><a href="#">Pham Cong Hau</a></li>
+                    <li><a href="#">Nguyen Viet Huy</a></li>
+                    <li><a href="#">Le Chung Hoang</a></li>
+                    <li><a href="#">Nguyen The Huy</a></li>
+                  </ul>
+                </div>
+            </div>
+                
+                <div class="right" style="background-color:#ddd;">
+                  <h2>Thông tin cá nhân</h2>
+                    <div class="row">
+                        <div class="left">
+                            <img src="images/logo.png" alt="Avatar" style="max-width: 150px;">
+                        </div>
+                        <div class="right" style="background-color:#ddd;">
+                            <p>Ho va ten: <input type="text" onfocus="this.value=''" value="Nguyen Trong Hoang"></p>
+                            <p>Gioi tinh: <input type="text" onfocus="this.value=''" value="Nam"></p>
+                            <p>CMND: <input type="text" onfocus="this.value=''" value="123456789"></p>
+                            <p>SDT: <input type="text" onfocus="this.value=''" value="0945744***"></p>
+                            <p>Email: <input type="text" onfocus="this.value=''" value="email@gmail.com"></p>
+                            <p>Đia chi: <input type="text" onfocus="this.value=''" value=""></p>
+                        </div>
+                    </div>
+                  <h2>Thông tin đăng nhập</h2>
+                    <p>Username: <input type="text" onfocus="this.value=''" value="Blabla"></p>
+                    <p>Password: <input type="text" onfocus="this.value=''" value="****"></p>
+                    <div class="row">
+                        <p>Chuc vu:</p>
+                        <div class="custom-select" style="width:200px;">
+                            <select>
+                              <option value="0">Quan ly</option>
+                              <option value="1">Nhan vien</option>
+                            </select>
+                        </div>               
+                    </div>
+                    <button class="btn">Save</button>
+              </div>
+    </div>
+            <div class="filterDiv cars">BMW</div>
+            <div class="filterDiv colors fruits">Orange</div>
+            <div class="filterDiv cars">Volvo</div>
+            <div class="filterDiv colors">Red</div>
+            <div class="filterDiv cars animals">Mustang</div>
+            <div class="filterDiv colors">Blue</div>
+            <div class="filterDiv animals">Cat</div>
+            <div class="filterDiv animals">Dog</div>
+            <div class="filterDiv fruits">Melon</div>
+            <div class="filterDiv fruits animals">Kiwi</div>
+            <div class="filterDiv fruits">Banana</div>
+            <div class="filterDiv fruits">Lemon</div>
+            <div class="filterDiv animals">Cow</div>
+        </div>
+    </div>
+      
+    <div id="tab1" class="tabcontent">
+        <h1>Paris</h1>
+        <p>Paris is the capital of France.</p> 
+    </div>
+     
+    <div id="tab2" class="tabcontent">
+        <h1>Tokyo</h1>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+      
+    <div id="tab3" class="tabcontent">
+        <h1>Oslo</h1>
+        <p>Oslo is the capital of Norway.</p>
+    </div>
+    
+    
+
+        
+
+    <div id="accountList" class="tabcontent">
+            <div class="row">
+                <div class="left" style="background-color:#bbb;">
+                  <ul id="myMenu">
+                    <li><a href="#">Nguyen Trong Hoang</a></li>
+                    <li><a href="#">Pham Cong Hau</a></li>
+                    <li><a href="#">Nguyen Viet Huy</a></li>
+                    <li><a href="#">Le Chung Hoang</a></li>
+                    <li><a href="#">Nguyen The Huy</a></li>
+                  </ul>
+                </div>
+            </div>
+                
+                <div class="right" style="background-color:#ddd;">
+                  <h2>Thông tin cá nhân</h2>
+                    <div class="row">
+                        <div class="left">
+                            <img src="images/logo.png" alt="Avatar" style="max-width: 150px;">
+                        </div>
+                        <div class="right" style="background-color:#ddd;">
+                            <p>Ho va ten: <input type="text" onfocus="this.value=''" value="Nguyen Trong Hoang"></p>
+                            <p>Gioi tinh: <input type="text" onfocus="this.value=''" value="Nam"></p>
+                            <p>CMND: <input type="text" onfocus="this.value=''" value="123456789"></p>
+                            <p>SDT: <input type="text" onfocus="this.value=''" value="0945744***"></p>
+                            <p>Email: <input type="text" onfocus="this.value=''" value="email@gmail.com"></p>
+                            <p>Đia chi: <input type="text" onfocus="this.value=''" value=""></p>
+                        </div>
+                    </div>
+                  <h2>Thông tin đăng nhập</h2>
+                    <p>Username: <input type="text" onfocus="this.value=''" value="Blabla"></p>
+                    <p>Password: <input type="text" onfocus="this.value=''" value="****"></p>
+                    <div class="row">
+                        <p>Chuc vu:</p>
+                        <div class="custom-select" style="width:200px;">
+                            <select>
+                              <option value="0">Quan ly</option>
+                              <option value="1">Nhan vien</option>
+                            </select>
+                        </div>               
+                    </div>
+                    <button class="btn">Save</button>
+              </div>
+    </div>
+    <!-- end of header -->
+    
+
+    <!-- About section -->
+   
