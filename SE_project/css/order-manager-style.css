@@ -1,0 +1,170 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+}
+/* #main{
+
+} */
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: #000;
+    height: 45.6px;
+}
+
+#nav {
+    display: inline-block;
+    position: relative;
+}
+
+#nav > a {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 45.6px;
+    padding: 0 24px;
+    color: #fff;
+    text-transform: uppercase;
+    list-style-type: none;
+}
+
+#nav a:hover{
+    display: block;
+    background-color: #ccc;
+    color: #000;
+}
+
+#nav .home-icon{
+    font-size: 20px;
+}
+
+#header .account-btn {
+    float: right;
+    padding: 0 21px;
+}
+
+#header .account-btn:hover {
+    cursor: pointer;
+    background-color: #f44336;
+}
+
+#header .account-icon {
+    color: #fff;
+    font-size: 20px;
+    line-height: 45.6px;
+}
+
+#content{
+    margin-top: 45.6px; 
+}
+
+#content .overview-text,
+#content .overview-content{
+    background-color: rgb(83, 184, 0);
+}
+
+#content .overview-text{
+    display: block;
+    padding: 40px 24px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#content .overview-content{
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#content .overview-content .content2 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 30px;
+}
+
+#content .order-list{
+    width: 100%;
+    border-collapse: collapse;
+    text-transform: uppercase;
+}
+
+#content .order-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#content .order-list tr:hover{
+    background-color: #ddd;
+}
+
+#content .order-list td,
+#content .order-list th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#content .order-list th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+}
+
+#content .order-list td {
+    text-align: center;
+}
+
+#content .time {
+    display: block;
+    position: relative;
+}
+
+#content .time:hover .subnav{
+    display: block;
+
+}
+
+#content .time > a{
+    color: #fff;
+    text-decoration: none;
+}
+
+#content .time .sort-btn {
+    font-size: 20px;
+    line-height: 40px;
+}
+
+#content .time .subnav {
+    list-style-type: none;
+}
+
+#content .order-list .time:hover, 
+#content .order-list .subnav li:hover {
+    background-color: #ccc;
+    
+}
+
+#content .subnav{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #04AA6D;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#content .subnav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 20px;
+}
