@@ -632,3 +632,19 @@ footer
   font-family: var(--ff-primary);
   font-size: 1rem;
 }
+
+/* ======================================= RestaurantManagement.html ====================================================== */
+.subnav {
+  margin: 2rem 0;
+  text-align: center;
+}
+.subnav-link {
+  display: block;
+  float: left;
+  width: 20%;
+  /* font-size: 0.875rem; */
+  font-family: var(--ff-primary);
+  color: var(--clr-grey-5);
+  transition: var(--transition);
+  background: var(--clr-primary-light);
+}
