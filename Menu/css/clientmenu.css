@@ -27,24 +27,24 @@ html {
 #body-header {
     background-color: rgb(87, 187, 184);
     background-size: cover;
-    height: 15vh;
+    height: 17vh;
 }
 
 .logo {
     width: 150px;
-    height: 15vh;
+    height: 17vh;
     width: 25%;
     float: left;
 }
 
 .search-container {
-    margin-top: 20px;
-    width: 45%;
+    margin-top: 40px;
+    margin-left: 100px;
+    width: 30%;
     float: left;
 }
 
 .search-box {
-    margin-left: 150px;
     padding: 7px;
     padding-right: 200px;
 }
@@ -54,21 +54,35 @@ html {
     padding: 10px;
     padding-top: 7px;
     padding-bottom: 7px;
-    transition: all .2s;
+    transition: all .3s;
 }
 
 .menu-cart {
-    margin-top: 7px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 17px;
+    margin-left: 50px;
     color: black;
     font-size: 312.5%;
-    width: 30%;
-    float: right;
-    transition: all .2s;
+    width: 6%;
+    float: left;
+    transition: all .3s;
 }
 
 .menu-cart:hover,
 .menu-cart:active {
     color: dimgray;
+}
+
+.cart-name {
+    font-size: 20px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.menu-cart:hover .cart-name {
+    opacity: 1;
+    color: #ffffff;
 }
 
 
@@ -105,12 +119,13 @@ html {
 .name,
 .price {
     color: #000;
-    font-size: 150%;
+    font-size: 125%;
 }
 
 .decription {
     color: #000;
     font-size: 17px;
+    font-weight: 500;
     text-align: justify;
 }
 
@@ -175,11 +190,12 @@ html {
 .contact {
     background-color: #000;
     text-align: left;
-    height: 20vh;
+    height: 30vh;
+    padding-top: 40px;
 }
 
 .contact-info {
-    margin-left: 50px;
+    margin-left: 60px;
 }
 
 .contact-text {
