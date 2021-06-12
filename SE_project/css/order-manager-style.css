@@ -11,13 +11,14 @@ html {
 
 } */
 
+/* HEADER */
 #header{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
 
-    background-color: #000;
+    background-color: #04AA6D;
     height: 45.6px;
 }
 
@@ -34,6 +35,7 @@ html {
     color: #fff;
     text-transform: uppercase;
     list-style-type: none;
+    border-radius: 20px;
 }
 
 #nav a:hover{
@@ -49,11 +51,14 @@ html {
 #header .account-btn {
     float: right;
     padding: 0 21px;
+    border-radius: 20px;
 }
 
 #header .account-btn:hover {
     cursor: pointer;
-    background-color: #f44336;
+    color: #000;
+    background-color: #ccc;
+    display: block;
 }
 
 #header .account-icon {
@@ -61,6 +66,9 @@ html {
     font-size: 20px;
     line-height: 45.6px;
 }
+
+
+/* CONTENT */
 
 #content{
     margin-top: 45.6px; 
@@ -76,6 +84,7 @@ html {
     padding: 40px 24px;
     text-align: center;
     text-transform: uppercase;
+    
 }
 
 #content .overview-content{
@@ -147,6 +156,9 @@ html {
 #content .time .subnav {
     list-style-type: none;
 }
+
+
+/* TABLE */
 
 #content .order-list .time:hover, 
 #content .order-list .subnav li:hover {
