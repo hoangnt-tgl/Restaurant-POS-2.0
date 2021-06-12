@@ -56,7 +56,8 @@ html {
     transition: all .3s;
 }
 
-.menu-cart {
+.modify-food,
+.delete-food {
     text-decoration: none;
     text-align: center;
     margin-top: 17px;
@@ -68,98 +69,85 @@ html {
     transition: all .3s;
 }
 
-.menu-cart:hover,
-.menu-cart:active {
+.modify-food:hover,
+.modify-food:active,
+.delete-food:hover,
+.delete-food:active {
     color: dimgray;
 }
 
-.cart-name {
+.icon-name {
     font-size: 20px;
     opacity: 0;
     transition: .3s;
 }
 
-.menu-cart:hover .cart-name {
+.modify-food:hover .icon-name,
+.delete-food:hover .icon-name {
     opacity: 1;
     color: #ffffff;
 }
 
 
-/* Product item */
+/* Product */
 
-.client-menu {
-    margin-top: 75px;
-    margin-bottom: 80px;
+.manager-menu {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .product {
     border: 1px solid #eee;
-    margin: 20px 0;
-    width: 100%;
-    height: 250px;
+    margin-bottom: 30px;
+    margin-left: 60px;
+    width: 27%;
+    height: 350px;
     position: relative;
+    text-align: center;
+    float: left;
 }
 
 .select {
-    width: 500px;
-    height: 250px;
-    width: 30%;
-    margin-left: 50px;
-    float: left;
-}
-
-.content {
-    margin-top: 20px;
+    width: 88%;
+    height: 255px;
+    margin-top: 27px;
     margin-bottom: 10px;
-    margin-left: 30px;
+}
+
+.food-name {
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.add-new-product {
+    margin-bottom: 30px;
+    margin-left: 60px;
+    width: 27%;
+    height: 350px;
+    text-align: center;
     float: left;
 }
 
-.name,
-.price {
-    color: #000;
-    font-size: 125%;
-}
-
-.decription {
-    color: #000;
-    font-size: 17px;
-    font-weight: 500;
-    text-align: justify;
-}
-
-.btn1 {
+.add-new-food {
     text-decoration: none;
-    color: white;
-    background-color: #e67e22;
-    padding: 15px 30px;
-    border-radius: 20px;
-    margin: 0 10px;
-    width: 190px;
-    text-align: center;
+    color: black;
+    font-size: 1000%;
+    width: 6%;
     transition: all .3s;
 }
 
-.btn1:hover,
-.btn1:active {
-    background-color: #d35400;
+#anf-icon {
+    margin-top: 60px;
 }
 
-.btn2 {
-    text-decoration: none;
-    color: white;
-    background-color: #e67e22;
-    padding: 15px 60px;
-    border-radius: 20px;
-    margin: 0 20px;
-    width: 190px;
-    text-align: center;
-    transition: all .3s;
+.anf-icon-name {
+    font-size: 25px;
 }
 
-.btn2:hover,
-.btn2:active {
-    background-color: #d35400;
+.add-new-food:hover,
+.add-new-food:active {
+    color: dimgray;
 }
 
 
@@ -189,18 +177,7 @@ html {
 
 /* Footer */
 
-.contact {
-    background-color: #000;
-    text-align: left;
-    height: 30vh;
-    padding-top: 40px;
-}
-
-.contact-info {
-    margin-left: 60px;
-}
-
-.contact-text {
-    color: #eee;
-    margin-top: 20px;
+.footer {
+    color: #ffffff;
+    height: 20vh;
 }
