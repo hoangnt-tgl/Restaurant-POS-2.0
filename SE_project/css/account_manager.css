@@ -61,7 +61,7 @@ header .name{
   background-color: #555;
   color: white;
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 10px 20px;
   font-size: 13px;
   width: auto;
   height: auto;
@@ -104,14 +104,14 @@ header .name{
   width: 30%;
 }
 
-#myMenu li a {
+#myMenu button {
   padding: 12px;
   text-decoration: none;
   color: black;
   display: block
 }
 
-#myMenu li a:hover {
+#myMenu button:hover {
   background-color: #eee;
 }
 .info {
@@ -380,8 +380,7 @@ header .name{
 
 /* Left column (menu) */
 .left {
-  flex: 35%;
-  padding: 15px 0;
+  flex: 30%;
 }
 
 .left h2 {
@@ -390,7 +389,7 @@ header .name{
 
 /* Right column (page content) */
 .right {
-  flex: 65%;
+  width: 65%;
   padding: 15px;
 }
 
@@ -400,8 +399,8 @@ header .name{
 
 /* Style the search box */
 #mySearch {
-  float: left;
-  width: 30%;
+  float: right;
+  min-width: 40%;
   font-size: 15px;
   padding: 10px;
   border: 1.2px solid rgb(12, 7, 7);
