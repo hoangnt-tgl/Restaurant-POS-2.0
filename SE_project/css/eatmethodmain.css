@@ -385,7 +385,7 @@ div.tab {
 }
  
 /* định dạng các button tab */
-div.tab button {
+div.tab a {
     background-color: inherit; 
     float: left;
     border: none;
