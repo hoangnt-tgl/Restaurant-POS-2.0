@@ -10,10 +10,10 @@ require_once('dbhelper.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Management</title>
+    <link rel="stylesheet" href="./css/om.css">
+    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="./css/om.css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -343,12 +343,12 @@ foreach ($orderList as $od){
             var data_method = button.data('smethod')
     
             // modal.find('.modal-body label').text(data_id)
-            $('.modal-body .lid').text(data_id)
-            $('.modal-body .lnumber').text(data_number)
-            $('.modal-body .ldate').text(data_date)
-            $('.modal-body .lpayment').text(data_payment)
-            $('.modal-body .lprice').text(data_price)
-            $('.modal-body .lmethod').text(data_method)
+            $('.modal-body .lid').text('ID: ' + data_id)
+            $('.modal-body .lnumber').text('Number of dishs: ' + data_number)
+            $('.modal-body .ldate').text('Date: ' + data_date)
+            $('.modal-body .lpayment').text('Payment: ' + data_payment)
+            $('.modal-body .lprice').text('Price: ' + data_price)
+            $('.modal-body .lmethod').text('Method: ' + data_method)
         });
         
         $('#delivery').on('shown.bs.modal', function (event) {
@@ -365,16 +365,16 @@ foreach ($orderList as $od){
             var data_address = button.data('saddress')
             
             // modal.find('.modal-body label').text(data_id)
-            $('.modal-body .kid').text(data_id)
-            $('.modal-body .knumber').text(data_number)
-            $('.modal-body .kdate').text(data_date)
-            $('.modal-body .kpayment').text(data_payment)
-            $('.modal-body .kprice').text(data_price)
-            $('.modal-body .kmethod').text(data_method)
-            $('.modal-body .kname').text(data_name)
-            $('.modal-body .kphone').text(data_phone)
-            $('.modal-body .kemail').text(data_email)
-            $('.modal-body .kaddress').text(data_address)
+            $('.modal-body .kid').text('ID: ' + data_id)
+            $('.modal-body .knumber').text('Number of dishs: ' + data_number)
+            $('.modal-body .kdate').text('Date: ' + data_date)
+            $('.modal-body .kpayment').text('Payment: ' + data_payment)
+            $('.modal-body .kprice').text('Price: ' + data_price)
+            $('.modal-body .kmethod').text('Method: ' + data_method)
+            $('.modal-body .kname').text('Name of customer: ' + data_name)
+            $('.modal-body .kphone').text('Phone number: ' + data_phone)
+            $('.modal-body .kemail').text('Email: ' + data_email)
+            $('.modal-body .kaddress').text('Address: ' + data_address)
         });
 
         $('#restaurant').on('shown.bs.modal', function (event) {
@@ -388,13 +388,13 @@ foreach ($orderList as $od){
             var data_table = button.data('stable')
     
             // modal.find('.modal-body label').text(data_id)
-            $('.modal-body .jid').text(data_id)
-            $('.modal-body .jnumber').text(data_number)
-            $('.modal-body .jdate').text(data_date)
-            $('.modal-body .jpayment').text(data_payment)
-            $('.modal-body .jprice').text(data_price)
-            $('.modal-body .jmethod').text(data_method)
-            $('.modal-body .jtable').text(data_table)
+            $('.modal-body .jid').text('ID: ' + data_id)
+            $('.modal-body .jnumber').text('Number of dishs: ' + data_number)
+            $('.modal-body .jdate').text('Date: ' + data_date)
+            $('.modal-body .jpayment').text('Payment: ' + data_payment)
+            $('.modal-body .jprice').text('Price: ' + data_price)
+            $('.modal-body .jmethod').text('Method: ' +data_method)
+            $('.modal-body .jtable').text('Table: ' + data_table)
         });
     </script>
 
