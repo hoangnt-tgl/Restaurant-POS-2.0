@@ -11,20 +11,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <title>Modify Food</title>
-    <link rel="stylesheet" href="./css/modifyfood.css">
+    <link rel="stylesheet" href="modifyfood.css">
 </head>
 
 <body>
     <!-- Body header -->
     <header id="body-header">
         <a href="../SE_project/mainPage.html">
-            <img class="logo" src="./images/Nova.jpg" alt="Logo">
+            <img class="logo" src="../images/Nova.jpg" alt="Logo">
         </a>
-        <a class="delete-food" href="#">
+        <a class="delete-food" onClick="openConfirmDeleteModal()">
             <i class="fas fa-trash"></i>
             <h3 class="icon-name">Xóa</h3>
         </a>
-        <a class="complete-modify" href="#">
+        <a class="complete-modify" onClick="openConfirmModifyModal()">
             <i class="fas fa-check-square"></i>
             <h3 class="icon-name">Hoàn thành</h3>
         </a>
@@ -38,7 +38,7 @@
                     <form>
                         <label class="product-left-label">Hình ảnh món ăn:</label>
                         <br>
-                        <img class="food-picture" src="./images/Ga_Dot_La_Truc_O_Thum/hinh-3.jpg" alt="Chicken">
+                        <img class="food-picture" src="../images/Ga_Dot_La_Truc_O_Thum/hinh-3.jpg" alt="Chicken">
                         <!-- <input type="file" class="food-picture-file" id="picture" name="picture" multiple required> -->
                         <br>
                         <label class="product-left-label">Số thứ tự:</label>
@@ -68,7 +68,34 @@
             </div>
         </article>
     </section>
+    <!-- Xác nhận chỉnh sửa -->
+    <div class="confirm-modify-modal">
+        <div id="confirm-modify-container">
+            <h2 class="confirm-modify-content">
+                Bạn có chắc chắn muốn chỉnh sửa món ăn này?
+            </h2>
+            <div class="confirm-modify-btn-container">
+                <a class="confirm-modify-btn" onClick="closeConfirmModifyModal()" href="../managermenu/managermenu.html">Xác nhận</a>
+                <a class="cancle-modify-btn" onClick="closeConfirmModifyModal()">Hủy</a>
+            </div>
+        </div>
+    </div>
+    <!-- Xác nhận xóa -->
+    <div class="confirm-delete-modal">
+        <div id="confirm-delete-container">
+            <h2 class="confirm-delete-content">
+                Bạn có chắc chắn muốn xóa món ăn này?
+            </h2>
+            <div class="confirm-delete-btn-container">
+                <a class="confirm-delete-btn" onClick="closeConfirmDeleteModal()" href="../managermenu/managermenu.html">Xác nhận</a>
+                <a class="cancle-delete-btn" onClick="closeConfirmDeleteModal()">Hủy</a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
     <footer class="footer"></footer>
+    <!-- File JavaScript -->
+    <script src="modifyfood.js"></script>
 </body>
 
 </html>

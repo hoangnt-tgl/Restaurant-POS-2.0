@@ -12,14 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <title>Manager Menu</title>
     <link rel="stylesheet" href="./vendors/grid.css">
-    <link rel="stylesheet" href="./css/managermenu.css">
+    <link rel="stylesheet" href="managermenu.css">
 </head>
 
 <body>
     <!-- Body header -->
     <header id="body-header">
         <a href="../SE_project/mainPage.html">
-            <img class="logo" src="./images/Nova.jpg" alt="Logo">
+            <img class="logo" src="../images/Nova.jpg" alt="Logo">
         </a>
         <form class="search-container">
             <input class="search-box" type="search" placeholder="Tìm kiếm" size="50">
@@ -31,7 +31,7 @@
             <i class="fas fa-edit"></i>
             <h3 class="icon-name">Chỉnh sửa</h3>
         </a>
-        <a class="delete-food" href="#">
+        <a class="delete-food" onclick="openConfirmDeleteModal()">
             <i class="fas fa-trash"></i>
             <h3 class="icon-name">Xóa</h3>
         </a>
@@ -41,86 +41,98 @@
     <section class="manager-menu">
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Ga_Dot_La_Truc_O_Thum/hinh-3.jpg" alt="Chicken">
+                <img class="select" src="../images/Ga_Dot_La_Truc_O_Thum/hinh-3.jpg" alt="Chicken">
             </a>
             <h5 class="food-name">Gà Đốt Lá Trúc Ô Thum</h5>
         </article>
 
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Banh_Xeo/hinh-3.jpg" alt="BanhXeo">
+                <img class="select" src="../images/Banh_Xeo/hinh-3.jpg" alt="BanhXeo">
             </a>
             <h5 class="food-name">Bánh Xèo Miền Tây</h5>
         </article>
 
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Ca_Hu_Kho_To/hinh-3.jpg" alt="Chicken">
+                <img class="select" src="../images/Ca_Hu_Kho_To/hinh-3.jpg" alt="Chicken">
             </a>
             <h5 class="food-name">Cá Hú Kho Tộ</h5>
         </article>
         <div class="clearfix"></div>
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Com_Chien_Hai_San/hinh-2.png" alt="Chicken">
+                <img class="select" src="../images/Com_Chien_Hai_San/hinh-2.png" alt="Chicken">
             </a>
             <h5 class="food-name">Cơm Chiên Hải Sản</h5>
         </article>
 
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Beefsteak/hinh-4.jpg" alt="Chicken">
+                <img class="select" src="../images/Beefsteak/hinh-4.jpg" alt="Chicken">
             </a>
             <h5 class="food-name">Beefsteak</h5>
         </article>
 
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Ga_Hap_Xi_Dau/hinh-1.jpg" alt="Chicken">
+                <img class="select" src="../images/Ga_Hap_Xi_Dau/hinh-1.jpg" alt="Chicken">
             </a>
             <h5 class="food-name">Gà Hấp Xì Dầu</h5>
         </article>
         <div class="clearfix"></div>
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Muc_Ong_Nhoi_Thit/hinh-2.jpg" alt="Chicken">
+                <img class="select" src="../images/Muc_Ong_Nhoi_Thit/hinh-2.jpg" alt="Chicken">
             </a>
             <h5 class="food-name">Mực Ống Nhồi Thịt</h5>
         </article>
 
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Salad/hinh-3.jpg" alt="Chicken">
+                <img class="select" src="../images/Salad/hinh-3.jpg" alt="Chicken">
             </a>
             <h5 class="food-name">Salad</h5>
         </article>
 
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Nom_Sua/hinh-5.jpg" alt="Chicken">
+                <img class="select" src="../images/Nom_Sua/hinh-5.jpg" alt="Chicken">
             </a>
             <h5 class="food-name">Nộm Sứa</h5>
         </article>
         <div class="clearfix"></div>
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Sup_Cua/hinh-6.jpg" alt="Chicken">
+                <img class="select" src="../images/Sup_Cua/hinh-6.jpg" alt="Chicken">
             </a>
             <h5 class="food-name">Súp Cua</h5>
         </article>
 
         <article class="product">
             <a href="#">
-                <img class="select" src="./images/Sup_Ca_Hoi/hinh-2.png" alt="Chicken">
+                <img class="select" src="../images/Sup_Ca_Hoi/hinh-3.png" alt="Chicken">
             </a>
             <h5 class="food-name">Súp Cá Hồi</h5>
         </article>
 
         <div class="add-new-product">
-            <a class="add-new-food" href="addnewfood.html">
+            <a class="add-new-food" href="../addnewfood/addnewfood.html">
                 <i class="far fa-plus-square" id="anf-icon"></i>
                 <h3 class="anf-icon-name">Thêm món ăn</h3>
             </a>
+        </div>
+        <!-- Xác nhận xóa -->
+        <div class="confirm-delete-modal">
+            <div id="confirm-delete-container">
+                <h2 class="confirm-delete-content">
+                    Bạn có chắc chắn muốn xóa món ăn này?
+                </h2>
+                <div class="confirm-delete-btn-container">
+                    <a class="confirm-delete-btn" onclick="closeConfirmDeleteModal()">Xác nhận</a>
+                    <a class="cancle-delete-btn" onclick="closeConfirmDeleteModal()">Hủy</a>
+                </div>
+            </div>
         </div>
         <div class="clearfix"></div>
         <!-- Chuyển trang -->
@@ -146,6 +158,8 @@
         </div>
     </section>
     <footer class="footer"></footer>
+    <!-- File JavaScript -->
+    <script src="managermenu.js"></script>
 </body>
 
 </html>

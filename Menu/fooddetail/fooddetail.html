@@ -11,24 +11,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <title>Food Detail</title>
-    <link rel="stylesheet" href="./css/fooddetail.css">
+    <link rel="stylesheet" href="fooddetail.css">
 </head>
 
 <body>
     <!-- Body header -->
     <header id="body-header">
         <a href="../SE_project/mainPage.html">
-            <img class="logo" src="./images/Nova.jpg" alt="Logo">
+            <img class="logo" src="../images/Nova.jpg" alt="Logo">
         </a>
-        <a class="detail-cart-plus" href="#">
+        <a class="detail-cart-plus" onclick="openConfirmOrderModal()">
             <i class="fas fa-cart-plus"></i>
             <h3 class="icon-name">Thêm vào giỏ hàng</h3>
         </a>
-        <a class="detail-cart" href="../SE_project/cart.html">
+        <a class="detail-cart" href="#">
             <i class="fas fa-shopping-cart"></i>
             <h3 class="icon-name">Giỏ hàng</h3>
         </a>
-        <a class="menu-back" href="clientmenu.html">
+        <a class="menu-back" href="../clientmenu/clientmenu.html">
             <i class="fas fa-th"></i>
             <h3 class="icon-name">Menu</h3>
         </a>
@@ -38,7 +38,7 @@
     <section class="product-infor">
         <article class="product">
             <div class="product-prn">
-                <img class="food-picture" src="./images/Ga_Dot_La_Truc_O_Thum/hinh-3.jpg" alt="Chicken">
+                <img class="food-picture" src="../images/Ga_Dot_La_Truc_O_Thum/hinh-3.jpg" alt="Chicken">
                 <div class="clearfix"></div>
                 <div class="food-review">
                     <span class="food-review-content">Đánh giá: </span>
@@ -82,6 +82,22 @@
             <div class="clearfix"></div>
         </article>
     </section>
+    <div class="confirm-order-modal">
+        <div id="confirm-order-container">
+            <h2 class="confirm-order-content">
+                Hãy chọn số lượng cho món ăn này
+            </h2>
+            <div class="confirm-order-number">
+                <button id="minus" onclick="decreasenumber()"><i class="fas fa-minus"></i></button>
+                <span id="number">1</span>
+                <button id="plus" onclick="increasenumber()"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="confirm-order-btn">
+                <a class="confirm-btn" onclick="closeConfirmOrderModal()">Xác nhận</a>
+                <a class="cancle-btn" onclick="closeConfirmOrderModal()">Hủy</a>
+            </div>
+        </div>
+    </div>
     <footer class="contact">
         <article class="contact-info">
             <h4 class="contact-text"><i class="fas fa-location-arrow"> Address: </i> Đại học bách khoa TPHCM, Thủ Đức, TPHCM</h4>
@@ -89,6 +105,8 @@
             <h4 class="contact-text"><i class="fas fa-phone"> Telephone: </i> 0943765795</h4>
         </article>
     </footer>
+    <!-- File JavaScript -->
+    <script src="fooddetail.js"></script>
 </body>
 
 </html>
