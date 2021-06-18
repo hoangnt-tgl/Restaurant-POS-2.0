@@ -1,9 +1,4 @@
 body {
-  font-family: var(--ff-primary);
-  background: var(--clr-white);
-  color: var(--clr-grey-1);
-  line-height: 1.5;
-  font-size: 0.875rem;
   width: 100%;
   height: 100%;
 }
@@ -13,6 +8,7 @@ header{
   display: flex;
   background-color: green;
   height: 3rem;
+  width: 100%;
 }
 header .logo {
   position: absolute;
@@ -24,8 +20,9 @@ header .name{
   left: 10%;
   font-size: 2rem;
   text-transform: capitalize;
-  animation: slideFromRight 5s ease-in-out 1;
+  /* animation: slideFromRight 5s ease-in-out 1; */ 
 }
+
 
 .menu {
   position: relative;
@@ -34,19 +31,6 @@ header .name{
   height: auto;
 }
 
-.btn3 {
-  background-color: #eee;
-  background: var(--clr-primary);
-  color: var(--clr-white);
-  padding: 0.375rem 0.7rem;
-  width: 33.33%; 
-
-}
-.btn3:hover{
-  color: var(--clr-primary);
-  background: var(--clr-primary-light);
-
-}
 
 /* Style the tab content */
 #myBtnContainer {
@@ -57,70 +41,67 @@ header .name{
   height: auto;
 
 }
-.tablink {
-  background-color: #555;
-  color: white;
-  cursor: pointer;
-  padding: 10px 20px;
-  font-size: 13px;
-  width: auto;
-  height: auto;
 
-}
-.tablink:hover {
-  background-color: #777;
-}
 
 .filterDiv {
-  position:absolute;
-  background-color: #2196F3;
-  color: #ffffff;
-  margin: 1px;
+/* Green */
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 2px;
+  background-color:#617d98;
+  padding: 0px 20px;
   display: none;
 }
 
-.show {
+.account {
+  margin-top: 0px;
   position: relative;
-  top: -10px;
-  display: flex;
-  flex-direction: column;
+  top: 10px;
+  
 }
-.show_info {
+.container {
+  margin-top: 0px;
+  overflow: hidden;
+  width:25%;
+  margin-left: 0px;
+  list-style-type: none;
+}
+.show {
   display: block;
 }
-
-.container {
-  position: relative;
-  left: 10px;
-  top: 10px;
-}
+/* .show_info {
+  display: block;
+} */
 
 /* Style the navigation menu inside the left column */
 #myMenu {
   position: absolute;
   list-style-type: none;
-  padding: 0;
   margin: 0;
-  width: 30%;
+  width: 35%;
 }
 
-#myMenu button {
-  padding: 12px;
-  text-decoration: none;
-  color: black;
-  display: block
-}
 
-#myMenu button:hover {
-  background-color: #eee;
-}
+
 .info {
   position: absolute;
-  top: -10px;
-  left: 32%;
+  top: 0px;
+  left: 35%;
   width: 65%;
 }
 
+.filterDiv input{
+  position: absolute;
+  right: 0px;
+  height: 24px;
+  background-color: red;
+
+}
+.filterDiv a{
+  color: white;
+}
 
  /*{
  ================== 
@@ -128,19 +109,7 @@ header .name{
  ==================
   */
  
- :root {
-   --clr-primary: #678e3e;
-   --clr-primary-light: #beed8c;
-   --clr-grey-1: #102a42;
-   --clr-grey-5: #617d98;
-   --clr-grey-10: #f1f5f8;
-   --clr-white: #fff;
-   --ff-primary: "Catamaran", sans-serif;
-   --ff-secondary: "Grand Hotel", cursive;
-   --transition: all 0.3s linear;
-   --spacing: 0.25rem;
-   --radius: 0.5rem;
- }
+
 
  * {
   position: relative;
@@ -222,11 +191,6 @@ header .name{
  
  
 
- .btn:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
  
  .banner-btn {
    outline: 0.125rem solid var(--clr-primary);

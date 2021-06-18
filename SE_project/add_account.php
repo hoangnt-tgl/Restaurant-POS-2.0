@@ -31,6 +31,8 @@ if(!empty($_POST)){
     require_once('dbhelp.php');
     $sql = "insert into account(username, password, position, name, gender, `identity card`, `phone number`, email, address) value ('$_username','$_password','$_position','$_name','$_gender','$_id_card','$_phone','$_email','$_address')";
     execute($sql);
+    header('Location: account_manager.php');
+    die();
 }
 ?>
 <!DOCTYPE html>
@@ -67,7 +69,7 @@ if(!empty($_POST)){
                     <input type="date" class="form-control" id="birthday">
                     </div> -->
                     <div class="form-group">
-                        <label for="gender">Giới tính:</label><br>
+                        <label for="gender">Gender:</label><br>
                         <input required="true" type="radio" name="gender" value="male">
                         <label for="male">Male</label>
                         <input type="radio" name="gender" value="female">
@@ -114,4 +116,5 @@ if(!empty($_POST)){
 		</div>
 	</div>
 </body>
+
 </html>
