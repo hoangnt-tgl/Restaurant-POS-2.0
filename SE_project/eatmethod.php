@@ -14,8 +14,8 @@ if (!empty($_POST)) {
     if (isset($_POST['Address'])) {
 		$s_Address = $_POST['Address'];
 	}
-    if (isset($_POST['Table'])) {
-		$s_Table = $_POST['Table'];
+    if (isset($_POST['button_table'])) {
+		$s_Table = $_POST['button_table'];
 	}
     /////
     if ($s_fullname != '' and $s_Email == ''){
@@ -30,7 +30,15 @@ if (!empty($_POST)) {
     require_once ('dbhelp.php');
     $sql = "INSERT INTO `khanh_hang`(`TEN`, `SDT`, `EMAIL`, `DIA_CHI`, `SO_BAN`, `PHUONG_THUC`, `THANH_TOAN`) 
     VALUES ('$s_fullname','$s_phone','$s_Email','$s_Address','$s_Table','$s_method','')";
+    if ($s_Table != '') 
+    {   $sql1 = " UPDATE `table` SET `status`='1' WHERE id = '$s_Table' ";
+        execute($sql1);
+    }
     execute($sql);
+    require_once ('dbhelp.php');
+
+    header('Location: paymentmethod.php');
+    die();
 }
 ?>
 <!DOCTYPE html>
@@ -41,8 +49,7 @@ if (!empty($_POST)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./eatmethodmain.css">
-    <script src='./main.js'></script>
+    <link rel="stylesheet" href="eatmethod.css">
 </head>
 
 <body>
@@ -75,7 +82,6 @@ if (!empty($_POST)) {
                     </td>
                 </tr>
 
-              
                 <tr class="heading">
                     <td>Item</td>
 
@@ -86,6 +92,8 @@ if (!empty($_POST)) {
                 require_once('dbhelp.php');
                 $sql = 'select * from mon';
                 $List = executeResult($sql);
+                $sql1 = 'SELECT * FROM `table`';
+                $List1 = executeResult($sql1);
                     ?>
 
             </table>
@@ -107,7 +115,7 @@ if (!empty($_POST)) {
                 </div>
             </button>
             <button class="button-body">
-                    <a class="button-box-em-body" href="cart.html">BACK</a>
+                    <a class="button-box-em-body" href="cart.php">BACK</a>
             </button>
         </div>
     </div>
@@ -124,11 +132,7 @@ if (!empty($_POST)) {
                     <input type="text" name="Phone" id = "Phone" >
                     <label>Phone Number</label>
                 </div>
-             
-                <a href="#">
-                    <button > Confirm </button>
-                    <a href="paymentmethod.php"> Continue </a>
-                </a>
+                <button class='btn-group-button' > Continue </button>
             </form>
         </div>
     </div>
@@ -153,10 +157,7 @@ if (!empty($_POST)) {
                     <input type="text" name="Address" >
                     <label>Address</label>
                 </div>
-                <a href="#">
-                    <button> Confirm </button>
-                    <a href="paymentmethod.php"> Continue </a>
-                </a>
+                    <button class='btn-group-button' > Continue </button>
             </form>
         </div>
     </div>
@@ -165,32 +166,7 @@ if (!empty($_POST)) {
         <div class="login-box">
             <h2>JOIN TABLE</h2>
             <form method="post">
-                <div class="btn-group">
-                    <input type = "hidden" name = "Table" value = "huy" />
-                    <button class='btn-group-button' name = "huy" value = "1">Table 1</button>
-                    <button class='btn-group-button'>Table 2</button>
-                    <button class='btn-group-button'>Table 3</button>
-                    <button class='btn-group-button'>Table 4</button>
-                    <button class='btn-group-button'>Table 5</button>
-                    <button class='btn-group-button'>Table 6</button>
-                    <button class='btn-group-button'>Table 7</button>
-                    <button class='btn-group-button'>Table 8</button>
-                    <button class='btn-group-button'>Table 9</button>
-                    <button class='btn-group-button'>Table 10</button>
-                    <button class='btn-group-button'>Table 11</button>
-                    <button class='btn-group-button'>Table 12</button>
-                    <button class='btn-group-button'>Table 13</button>
-                    <button class='btn-group-button'>Table 14</button>
-                    <button class='btn-group-button'>Table 15</button>
-                    <button class='btn-group-button'>Table 16</button>
-                    <button class='btn-group-button'>Table 17</button>
-                    <button class='btn-group-button'>Table 18</button>
-                    <button class='btn-group-button'>Table 19</button>
-                    <button class='btn-group-button'>Table 20</button>
-                </div>
-                <a href="#">
-                    <a href="paymentmethod.php"> Continue </a>
-                </a>
+                <div class= "btn-group" id = "check"> </div>
             </form>
         </div>
     </div>
@@ -206,8 +182,17 @@ if (!empty($_POST)) {
             document.getElementById("manyitem").innerHTML = document.getElementById("manyitem").innerHTML + '<tr class="item"> <td>'+name_of_dish + '</td><td>' + price_of_dish +' đ </td></tr>'
             total += parseInt(price_of_dish);
         }
-        document.getElementById("manyitem").innerHTML += '<tr class="total"> <td></td><td>Total: '+total+' đ </td></tr>' 
+        document.getElementById("manyitem").innerHTML += '<tr class="total"> <td></td><td>Total: '+total+' đ </td></tr>'
+        //////
+        var list_of_order1 = <?php echo json_encode($List1); ?>;
+        for (i = 0; i < list_of_order1.length; i++)
+        {
+            var id_table = list_of_order1[i]['id'];
+            var status = list_of_order1[i]['status'];
+            if (status == '0') document.getElementById("check").innerHTML = document.getElementById("check").innerHTML + ' <button class="btn-group-button" name="button_table" value="'+id_table+'" >Table ' + id_table + '</button>'
+        } 
     </script>
+    
 </body>
 
 </html>
