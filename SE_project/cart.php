@@ -27,7 +27,7 @@
         <!-- tab -->
         <div class="tab">
             <a class="tablinks" href="mainPage.html">Home Page</a>
-            <a class="tablinks" href="../Menu/clientmenu.html">Menu</a>
+            <a class="tablinks" href="clientmenu.php">Menu</a>
         </div>
     </header>
     <!-- ...........................-->
