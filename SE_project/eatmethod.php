@@ -50,6 +50,18 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="eatmethod.css">
+    <style>
+.btn-group-button1 {
+    width: 25%;
+    background: #0000007e;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 20%;
+    margin-left: 35%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+</style>
 </head>
 
 <body>
@@ -128,11 +140,13 @@ if (!empty($_POST)) {
                     <input type="text" name="Name" id = "Name" >
                     <label>Name</label>
                 </div> 
+
                 <div class="user-box">
                     <input type="text" name="Phone" id = "Phone" >
                     <label>Phone Number</label>
                 </div>
-                <button class='btn-group-button' > Continue </button>
+                
+                <button class='btn-group-button1' > Continue </button>
             </form>
         </div>
     </div>
@@ -157,7 +171,7 @@ if (!empty($_POST)) {
                     <input type="text" name="Address" >
                     <label>Address</label>
                 </div>
-                    <button class='btn-group-button' > Continue </button>
+                    <button class='btn-group-button1' > Continue </button>
             </form>
         </div>
     </div>

@@ -1,3 +1,36 @@
+<?php
+
+if (!empty($_POST)) 
+{
+      require_once('dbhelp.php');
+      $sql_mon = 'select * from mon';
+      $List_mon = executeResult($sql_mon);
+      $sql_kh = 'select * from khanh_hang';
+      $List_kh = executeResult($sql_kh);
+    if (!empty($List_kh) and !empty($List_mon) ){
+      $total = 0;
+      $i = 0;
+      for ($i ; $i <  count($List_mon) ; $i++)
+      {
+          $price_of_dish =  $List_mon[$i]['GIA'];
+          $total += ($price_of_dish);
+      }
+      $name_ = $List_kh[0]['TEN'];
+      $std_ = $List_kh[0]['SDT'];
+      $email_ = $List_kh[0]['EMAIL'];
+      $address_ = $List_kh[0]['DIA_CHI']; 
+      $table_ = $List_kh[0]['SO_BAN'];
+      $method_ = $List_kh[0]['PHUONG_THUC'];
+      $payment_ = $List_kh[0]['THANH_TOAN'];
+     require_once ('dbhelp.php');
+     $sql_insert = " INSERT INTO `om`(`id`, `price`, `date`, `payment`, `method`, `number`, `name`, `phone`, `email`, `address`, `tableR`) 
+     VALUES ('','$total','2021-06-20','$payment_','$method_',' $i','$name_','$std_','$name_','$email_','$table_')";
+     $sql_delete = " DELETE FROM `khanh_hang` WHERE 1=1";
+     execute($sql_delete);
+     execute($sql_insert);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +40,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./reviewmain.css">
-</head>
+    <style>
+.button {
+  background-color: rgb(78, 213, 218);
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left:  80%;
+  margin-top:  0%;
+  cursor: pointer;
+  height: 50px;
+width: 100px;
+}
+.button1 {font-size: 10px;}
 
+</style>
+</head>
 <body>
     <div id="box">
         <header id="site-header">
@@ -37,7 +87,7 @@
 
 
                             </tr>
-                        </table>
+             </table>
                     </td>
                 </tr>
                 <?php
@@ -49,7 +99,11 @@
                     ?>
             </table>
         </div>
-
+        <form method="post">
+            <input type = "hidden" name = "1" value = "1" >
+            <button class="button button1"> Complete </button>
+        </form>
+        
     </div>
     <script>
         var list_of_order = <?php echo json_encode($List); ?>;

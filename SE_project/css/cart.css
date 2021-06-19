@@ -8,7 +8,7 @@ body {
     background: #eee;
     overflow: auto;
     height: 70vh;
-    width: 90vw;
+    weight: 90vw;
     margin-left: 5%;
     margin-right: 5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
@@ -331,6 +331,11 @@ a:hover {
     -ms-transition: all .2s linear;
     -o-transition: all .2s linear;
     transition: all .2s linear;
+}
+
+.huy {
+    float: left;
+    width: 73.6;
 }
 
 .btn:hover {
