@@ -83,19 +83,19 @@ if(isset($_POST["confirm-delete"])){
     ?>
         <!-- Xác nhận xóa -->
         <div class="confirm-delete-modal">
-                <div id="confirm-delete-container">
-                    <h2 class="confirm-delete-content">
-                        Bạn có chắc chắn muốn xóa món ăn này?
-                    </h2>
-                    <div class="confirm-delete-btn-container">
-                        <form enctype="multipart/form-data" method="post">
-                            <input type="number" class="food-ID" name="ID" value="<?=$ID?>">
-                            <input type="submit" class="confirm-delete-btn" name="confirm-delete" value="Xác nhận">
-                            <button class="cancle-delete-btn" onclick="closeConfirmDeleteModal()">Hủy</button>
-                        </form>
-                    </div>
+            <div id="confirm-delete-container">
+                <h2 class="confirm-delete-content">
+                    Bạn có chắc chắn muốn xóa món ăn này?
+                </h2>
+                <div class="confirm-delete-btn-container">
+                    <form enctype="multipart/form-data" method="post">
+                        <input type="number" class="food-ID" name="ID" value="<?=$ID?>">
+                        <input type="submit" class="confirm-delete-btn" name="confirm-delete" value="Xác nhận">
+                        <button class="cancle-delete-btn" onclick="closeConfirmDeleteModal()">Hủy</button>
+                    </form>
                 </div>
             </div>
+        </div>
         <!-- Thêm món ăn mới -->
         <div class="add-new-product">
                 <a class="add-new-food" href="addnewfood.php">

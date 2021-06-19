@@ -1,5 +1,27 @@
 <?php
 require_once('./php/dbhelp.php');
+// Thêm dữ liệu vào database
+if (isset($_POST["confirm-order"])){
+    $f_ID = $f_name = $f_price = $f_number = $f_money = $f_link = '';
+    
+    if (isset($_POST['ID'])) {
+        $f_ID = $_POST['ID'];
+        $sql = "select * from menu where ID = " .$f_ID;
+        $menuList = executeResult($sql);
+        if ($menuList != NULL) {
+            $std = $menuList[0];
+            $f_name = $std['Name'];
+            $f_price = $std['Price'];
+            $f_link = $std['Picture'];
+        }
+    }
+    if (isset($_POST['number'])) {
+        $f_number = $_POST['number'];
+    }
+    (INT)$f_money = (INT)$f_number * (INT)$f_price;
+    $sql = "insert into mon(ID, TEN, GIA, SO_LUONG, TONG_TIEN, LINK, GHI_CHU ) value ('$f_ID','$f_name','$f_price','$f_number','$f_money','$f_link','')";
+    execute($sql);
+}
 ?>
 
 <!DOCTYPE html>
@@ -57,21 +79,22 @@ require_once('./php/dbhelp.php');
         foreach($menuList as $std){
             echo
             '<article class="product">
-            <header class="product-header">
-                <a href="#">
-                    <img class="select" src="'.'.'.mb_substr($std['Picture'], 45).'" alt="Photo">
-                </a>
-            </header>
-            <div class="content">
-                <h2 class="name" id="name">'.$std['Name'].'</h2>
-                <h2 class="price" id="price">'.$std['Price'].'đ/phần</h2>
-                <h5 class="decription" id="decription">'.mb_substr($std['Decription'],0, 100).'<br>'.mb_substr($std['Decription'],101, 100).'<br>'.mb_substr($std['Decription'],201, 100).'...'.'</h5>
-            </div>
-            <footer class="content">
-                <a class="btn1" onClick="openConfirmOrderModal()">Thêm vào giỏ hàng</a>
-                <a class="btn2" onclick=\'window.open("fooddetail.php?id='.$std['ID'].'","_self")\'>Xem chi tiết</a>
-            </footer>
-        </article>';
+                <header class="product-header">
+                    <a href="#">
+                        <img class="select" src="'.'.'.mb_substr($std['Picture'], 45).'" alt="Photo">
+                    </a>
+                </header>
+                <div class="content">
+                    <h2 class="name" id="name">'.$std['Name'].'</h2>
+                    <h2 class="price" id="price">'.$std['Price'].'đ/phần</h2>
+                    <h5 class="decription" id="decription">'.mb_substr($std['Decription'],0, 100).'<br>'.mb_substr($std['Decription'],101, 100).'<br>'.mb_substr($std['Decription'],201, 100).'...'.'</h5>
+                </div>
+                <footer class="content">
+                    <a class="btn1" onClick="openConfirmOrderModal('.$std['ID'].')">Thêm vào giỏ hàng</a>
+                    <a class="btn2" onclick=\'window.open("fooddetail.php?id='.$std['ID'].'","_self")\'>Xem chi tiết</a>
+                </footer>
+            </article>
+            ';
         }
     ?>
     </section>
@@ -80,16 +103,13 @@ require_once('./php/dbhelp.php');
             <h2 class="confirm-order-content">
                 Hãy chọn số lượng cho món ăn này
             </h2>
-            <div class="confirm-order-number">
+            <div class="confirm-order-form">
                 <form enctype="multipart/form-data" method="post">
-                    <button id="minus" onclick="decreasenumber()"><i class="fas fa-minus"></i></button>
-                    <input id="number" name="number" value="1" size="3">
-                    <button id="plus" onclick="increasenumber()"><i class="fas fa-plus"></i></button>
-                </form>
-            </div>
-            <div class="confirm-order-btn">
-                <form enctype="multipart/form-data" method="post">
-                    <input type="number" class="food-ID" name="ID" value="<?=$ID?>">
+                    <a id="minus" onclick="decreasenumber()"><i class="fas fa-minus"></i></a>
+                    <input id="number" name="number" value="1" size="2">
+                    <a id="plus" onclick="increasenumber()"><i class="fas fa-plus"></i></a>
+                    <br>
+                    <input type="number" class="food-ID" name="ID" id="food-ID" value="">
                     <input type="submit" class="confirm-btn" name="confirm-order" value="Xác nhận">
                     <button class="cancle-btn" onclick="closeConfirmOrderModal()">Hủy</button>
                 </form>

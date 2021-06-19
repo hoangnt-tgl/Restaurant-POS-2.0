@@ -112,6 +112,7 @@ if(!empty($_POST)){
                     <textarea class="food-decription" id="decription" name="decription" cols="80" rows="15"></textarea>
                     <br>
                     <input class="save-btn" type="submit" name="complete" value="Hoàn thành">
+                    <input type="reset" class="reset-btn" name="reset" value="Đặt lại">
                 </form>
             </div>
         </article>

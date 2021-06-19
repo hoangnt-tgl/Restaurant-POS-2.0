@@ -103,7 +103,7 @@ html {
 }
 
 .save-btn,
-.delete-btn {
+.reset-btn {
     color: white;
     cursor: pointer;
     background-color: #e67e22;
@@ -120,8 +120,8 @@ html {
 
 .save-btn:hover,
 .save-btn:active,
-.delete-btn:hover,
-.delete-btn:active {
+.reset-btn:hover,
+.reset-btn:active {
     background-color: #d35400;
 }
 

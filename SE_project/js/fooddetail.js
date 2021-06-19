@@ -12,9 +12,9 @@ function closeConfirmOrderModal() {
 
 // Increase Food Number
 function increasenumber() {
-    var foodNumber = document.getElementById('number').innerHTML;
+    var foodNumber = document.getElementById('number').value;
     foodNumber = Number(foodNumber) + 1;
-    document.getElementById('number').innerHTML = foodNumber;
+    document.getElementById('number').value = foodNumber;
     if (Number(foodNumber) > 0) {
         document.getElementById('minus').style.color = 'black';
     }
@@ -22,9 +22,9 @@ function increasenumber() {
 
 // Increase Food Number
 function decreasenumber() {
-    var foodNumber = document.getElementById('number').innerHTML;
+    var foodNumber = document.getElementById('number').value;
     if (Number(foodNumber) >= 1) foodNumber = Number(foodNumber) - 1;
-    document.getElementById('number').innerHTML = foodNumber;
+    document.getElementById('number').value = foodNumber;
     if (Number(foodNumber) == 0) {
         document.getElementById('minus').style.color = '#cac6c6';
     }

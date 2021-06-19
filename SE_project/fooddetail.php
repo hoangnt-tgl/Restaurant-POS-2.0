@@ -1,5 +1,6 @@
 <?php
 require_once('./php/dbhelp.php');
+// Lấy dữ liệu
 $food_ID = '';
 if (isset($_GET['id'])) {
     $food_ID = $_GET['id'];
@@ -12,12 +13,46 @@ if (isset($_GET['id'])) {
         $price = $std['Price'];
         $ammount = $std['Ammount'];
         $picture = '.'.mb_substr($std['Picture'], 45);
+        $link = $std['Picture'];
         $decription = $std['Decription'];
     }
     else {
         $food_ID = '';
     }
 
+}
+// Thêm dữ liệu vào database
+if (isset($_POST["note-save"])) {
+    $f_ID = $ID;
+    $f_name = $name;
+    $f_link = $link;
+    if (isset($_POST['note'])) {
+        $f_note = $_POST['note'];
+    }
+    $sql = "insert into mon(ID, TEN, GIA, SO_LUONG, TONG_TIEN, LINK, GHI_CHU ) value ('$f_ID','$f_name','','','','$f_link','$f_note')";
+    execute($sql);
+}
+if (isset($_POST["confirm-order"])) {
+    $f_ID = $f_name = $f_price = $f_number = $f_money = $f_link = $f_note =  '';
+
+    $f_ID = $ID;
+    $f_name = $name;
+    $f_price = $price;
+    $f_link = $link;
+    if (isset($_POST['number'])) {
+        $f_number = $_POST['number'];
+    }
+    if ($ID != '') {
+        $sql = 'select * from mon where ID = ' .$ID;
+        $menuList = executeResult($sql);
+        if ($menuList != NULL) {
+            $std = $menuList[0];
+            $f_note = $std['GHI_CHU'];
+        }
+    }
+    (INT)$f_money = (INT)$f_number * (INT)$f_price;
+    $sql = "update mon set TEN = '$f_name', GIA = '$f_price', SO_LUONG = '$f_number', TONG_TIEN = '$f_money', LINK = '$f_link', GHI_CHU = '$f_note' where ID = " .$ID;
+    execute($sql);
 }
 ?>
 
@@ -74,7 +109,10 @@ if (isset($_GET['id'])) {
                     </span>
                 </div>
                 <form class="note-container" enctype="multipart/form-data" method="post">
-                    <textarea class="note-box" type="text" placeholder="Ghi chú" cols="20" rows="2"> </textarea>
+                    <textarea class="note-box" type="text" id="note" name="note" placeholder="Ghi chú" cols="20" rows="2"></textarea>
+                    <br>
+                    <input type="submit" class="note-save-btn" name="note-save" value="Lưu lại">
+                    <input type="reset" class="reset-note-btn" name="reset-note" value="Đặt lại">
                 </form>
             </div>
             <div class="clearfix"></div>
@@ -94,14 +132,16 @@ if (isset($_GET['id'])) {
             <h2 class="confirm-order-content">
                 Hãy chọn số lượng cho món ăn này
             </h2>
-            <div class="confirm-order-number">
-                <button id="minus" onclick="decreasenumber()"><i class="fas fa-minus"></i></button>
-                <span id="number">1</span>
-                <button id="plus" onclick="increasenumber()"><i class="fas fa-plus"></i></button>
-            </div>
-            <div class="confirm-order-btn">
-                <a class="confirm-btn" onclick="closeConfirmOrderModal()">Xác nhận</a>
-                <a class="cancle-btn" onclick="closeConfirmOrderModal()">Hủy</a>
+            <div class="confirm-order-form">
+                <form enctype="multipart/form-data" method="post">
+                    <a id="minus" onclick="decreasenumber()"><i class="fas fa-minus"></i></a>
+                    <input id="number" name="number" value="1" size="2">
+                    <a id="plus" onclick="increasenumber()"><i class="fas fa-plus"></i></a>
+                    <br>
+                    <input type="number" class="food-ID" name="ID" id="food-ID" value="<?=$ID?>">
+                    <input type="submit" class="confirm-btn" name="confirm-order" value="Xác nhận">
+                    <button class="cancle-btn" onclick="closeConfirmOrderModal()">Hủy</button>
+                </form>
             </div>
         </div>
     </div>
@@ -113,7 +153,7 @@ if (isset($_GET['id'])) {
         </article>
     </footer>
     <!-- File JavaScript -->
-    <script src="fooddetail.js"></script>
+    <script src="./js/fooddetail.js"></script>
 </body>
 
 </html>

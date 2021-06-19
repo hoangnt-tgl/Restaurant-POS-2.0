@@ -1,7 +1,8 @@
 var confirmOrderModal = document.querySelector('.confirm-order-modal');
 // Open Confirm Order Modal
-function openConfirmOrderModal() {
+function openConfirmOrderModal(id) {
     confirmOrderModal.style.display = 'inline';
+    document.getElementById('food-ID').value = id;
 }
 
 // Close Confirm Order Modal

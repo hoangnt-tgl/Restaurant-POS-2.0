@@ -72,6 +72,7 @@ if(!empty($_POST)){
     }
 }
 
+// Lấy dữ liệu
 $food_ID = '';
 if (isset($_GET['id'])) {
     $food_ID = $_GET['id'];
@@ -142,6 +143,7 @@ if (isset($_GET['id'])) {
                     <textarea class="food-decription" id="decription" name="decription" cols="84" rows="15"><?=$decription?></textarea>
                     <br>
                     <input class="save-btn" type="submit" name="complete" value="Hoàn thành">
+                    <input type="reset" class="reset-btn" name="reset" value="Đặt lại">
                 </form>
             </div>
         </article>
