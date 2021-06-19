@@ -6,8 +6,20 @@ if (!empty($_POST)) {
 		$s_payment = $_POST['payment'];
 	}
     require_once ('dbhelp.php');
-    $sql = "UPDATE `khanh_hang` SET `THANH_TOAN`= '$s_payment' WHERE 1";
-    execute($sql);
+    if ($s_payment == 'delete'){
+        $sql = "DELETE FROM `khanh_hang`  WHERE 1";
+        execute($sql);
+        header('Location: cart.php');
+        die();
+    }
+    else{
+        $sql = "UPDATE `khanh_hang` SET `THANH_TOAN`= '$s_payment' WHERE 1";
+        execute($sql);
+        header('Location: reviewindex.php');
+        die();
+    }
+
+   
 }
 ?>
 <!DOCTYPE html>
@@ -18,8 +30,30 @@ if (!empty($_POST)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./paymentmethodmain.css">
+    <link rel="stylesheet" href="paymentmethod.css">
     <script src='./main.js'></script>
+    <style>
+.btn-group-button {
+    width: 25%;
+    background: #0000007e;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 20%;
+    margin-left: 35%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.btn-group-button1 {
+    width: 25%;
+    background: #0000007e;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 20%;
+    margin-left: 12%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+    </style>
 </head>
 
 <body>
@@ -64,32 +98,33 @@ if (!empty($_POST)) {
         <div class="button-box">
             <button class="button-body">
                 <div class="button-box-em">
-                    <a class="button-box-em-body" href="#popup1">MoMo</a>
+                    <a class="button-box-em-body" href="#popup4">MoMo</a>
                 </div>
             </button>
             <button class="button-body">
-                    <a class="button-box-em-body" href="#popup2">Cash</a>
+                    <a class="button-box-em-body" href="#popup5">Cash</a>
             </button>
             <button class="button-body">
-                <a class="button-box-em-body" href="#popup3">Cancel Order</a>
+                <a class="button-box-em-body" href="#popup6">Cancel Order</a>
             </button>
         </div>
     </div>
 
-    <div id="popup1" class="overlay">
+    <div id="popup4" class="overlay">
         <div class="login-box">
             <h2> Payment Success </h2>
             <form method= "post">
                 <div class="user-box">
                     <label>Thank you for using our service! See you soon.</label>
-                    <input type = "hidden" name = "payment" value = "MoMo" >
+                    <input type = "hidden" name = "payment" value = "MoMo" >   
                 </div>
-                <button> OKE </button>
-                <a href="reviewindex.php"> Continue </a>
+                
+                <button class='btn-group-button'>Continue</button>
+
             </form>
         </div>
     </div>
-    <div id="popup2" class="overlay">
+    <div id="popup5" class="overlay">
         <div class="login-box">
             <h2> Payment Success </h2>
             <form method= "post">
@@ -97,21 +132,22 @@ if (!empty($_POST)) {
                     <label>Thank you for using our service! See you soon.</label>
                     <input type = "hidden" name = "payment" value = "Cash" >
                 </div>
-                <button> OKE </button>
-                <a href="reviewindex.php"> Continue </a>
+                <button class='btn-group-button'>Continue</button>
+            </a>
             </form>
         </div>
     </div>
-    <div id="popup2" class="overlay">
+    <div id="popup6" class="overlay">
         <div class="login-box">
             <h2> Warning </h2>
-            <form>
+            <form method= "post">
                 <div class="user-box">
                     <label> Are you sure you want to delete this order? </label>
+                    <input type = "hidden" name = "payment" value = "delete" >
                 </div>
-
-                <a href="./clientmenu.html"> Yes </a>
-                <a href="./paymentmethod.php"> No </a>
+                
+                <button class='btn-group-button1'>yes</button>
+                <button class='btn-group-button1'   type="button" onclick="location.href='paymentmethod.php'" > No</button>
             </form>
         </div>
     </div>
