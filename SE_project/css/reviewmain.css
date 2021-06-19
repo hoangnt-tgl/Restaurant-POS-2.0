@@ -5,6 +5,23 @@ body {
     overflow-x: hidden;
 }
 
+.button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    font-size: 10px;
+}
+
 #cart_body {
     background: rgb(78, 213, 218);
 }
@@ -14,8 +31,6 @@ body {
     display: table;
     clear: both;
 }
-
-#container_header {}
 
 #site-header,
 #site-footer {
@@ -414,7 +429,6 @@ div.tab a {
     padding-right: 5%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 5%;
     border: 1px solid #eee;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     font-size: 16px;
