@@ -1,3 +1,19 @@
+<?php
+require_once('./php/dbhelp.php');
+// Xóa
+if(isset($_POST["confirm-delete"])){
+    $f_ID = '';
+    if (isset($_POST['ID'])) {
+        $f_ID = $_POST['ID'];
+    }
+    if ($f_ID != '') {
+        $sql = "delete from menu where ID = " .$f_ID;
+    }
+    execute($sql);
+    header("location: managermenu.php");
+}
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -21,9 +37,9 @@
         <a href="../SE_project/mainPage.html">
             <img class="logo" src="./images/Nova.jpg" alt="Logo">
         </a>
-        <form class="search-container">
-            <input class="search-box" type="search" placeholder="Tìm kiếm" size="50">
-            <button class="search-icon">
+        <form class="search-container" method="get">
+            <input type="search" class="search-box" name="search-holder" placeholder="Tìm kiếm" size="50">
+            <button type="submit" class="search-icon" name="search-click">
                 <i class="fas fa-search"></i>
             </button>
         </form>
@@ -33,9 +49,22 @@
     <section class="manager-menu">
     <?php
         require_once('./php/dbhelp.php');
-        $sql = 'select * from menu';
+        //Tìm kiếm
+        if(isset($_GET["search-click"])){
+            $s_text = '';
+            if (isset($_GET["search-holder"])) {
+                $s_text = $_GET["search-holder"];
+            }
+            if ($s_text != '') {
+                $sql = 'select * from menu where Name like "%'.$s_text.'%"';
+            }
+        }
+        else {
+            $sql = 'select * from menu';
+        }
         $menuList = executeResult($sql);
         foreach($menuList as $std){
+            $ID = $std['ID'];
             echo
             '<article class="product">
             <a href="#">
@@ -49,21 +78,24 @@
             </a>
             <h5 class="food-name">'.$std['Name'].'</h5>
             </article>
-            <!-- Xác nhận xóa -->
-            <div class="confirm-delete-modal">
+            ';
+        }
+    ?>
+        <!-- Xác nhận xóa -->
+        <div class="confirm-delete-modal">
                 <div id="confirm-delete-container">
                     <h2 class="confirm-delete-content">
                         Bạn có chắc chắn muốn xóa món ăn này?
                     </h2>
                     <div class="confirm-delete-btn-container">
-                        <a class="confirm-delete-btn" onclick="deleteFood('.$std['ID'].')">Xác nhận</a>
-                        <a class="cancle-delete-btn" onclick="closeConfirmDeleteModal()">Hủy</a>
+                        <form enctype="multipart/form-data" method="post">
+                            <input type="number" class="food-ID" name="ID" value="<?=$ID?>">
+                            <input type="submit" class="confirm-delete-btn" name="confirm-delete" value="Xác nhận">
+                            <button class="cancle-delete-btn" onclick="closeConfirmDeleteModal()">Hủy</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            ';
-        }
-    ?>
         <!-- Thêm món ăn mới -->
         <div class="add-new-product">
                 <a class="add-new-food" href="addnewfood.php">
@@ -72,40 +104,10 @@
                 </a>
             </div>
         <div class="clearfix"></div>
-        <!-- Chuyển trang -->
-        <div class="page-move">
-            <a href="#" class="move">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            <a href="#" class="move">
-                    ...
-                </a>
-            <a href="#" class="move">
-                    3
-                </a>
-            <a href="#" class="move">
-                    2
-                </a>
-            <a href="#" class="move">
-                    1
-                </a>
-            <a href="#" class="move">
-                <i class="fas fa-angle-left"></i>
-            </a>
-        </div>
     </section>
     <footer class="footer"></footer>
     <!-- File JavaScript -->
     <script src="./js/managermenu.js"></script>
-    <script type="text/javascript">
-        function deleteFood(id) {
-            $.post('delete_food.php', {
-                'id': id
-            }, function(data) {
-                local.reload();
-            })
-        }
-    </script>
 </body>
 
 </html>

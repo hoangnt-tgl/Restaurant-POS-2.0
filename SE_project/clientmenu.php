@@ -1,3 +1,7 @@
+<?php
+require_once('./php/dbhelp.php');
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -20,43 +24,11 @@
         <a href="../SE_project/mainPage.html">
             <img class="logo" src="./images/logo.png" alt="Logo">
         </a>
-        <form class="search-container">
-            <input class="search-box" type="search" placeholder="Tìm kiếm" size="50">
-            <button class="search-icon">
+        <form class="search-container" method="get">
+            <input type="search" class="search-box" name="search-holder" placeholder="Tìm kiếm" size="50">
+            <button type="submit" class="search-icon" name="search-click">
                 <i class="fas fa-search"></i>
             </button>
-        </form>
-        <form class="filter-top-container">
-            <select class="filter-product-top">
-                <option>Bữa sáng</option>
-                <option>Bữa trưa</option>
-                <option>Bữa tối</option>
-            </select>
-            <select class="filter-product-top">
-                <option>Dưới 100.000đ</option>
-                <option>Trên 100.000đ đến 300.000đ</option>
-                <option>Trên 300.000đ đến 500.000đ</option>
-                <option>Trên 500.000đ</option>
-            </select>
-        </form>
-        <br>
-        <form class="filter-bottom-container">
-            <select class="filter-product-bottom">
-                <option>Trà Đào</option>
-                <option>Trà Vải</option>
-                <option>Coca-cola</option>
-                <option>Pepsi</option>
-                <option>Heniken</option>
-            </select>
-            <select class="filter-product-bottom">
-                <option>Bánh táo nướng</option>
-                <option>Bánh Mochi Nhật Bản</option>
-                <option>Bánh Tiramisu Ý</option>
-                <option>Bánh Tapioca Brazil</option>
-                <option>Bánh Macaron Pháp</option>
-                <option>Bánh Gateau St. Honore</option>
-                <option>Bánh trifle Anh quốc</option>
-            </select>
         </form>
         <a class="menu-cart" href="cart.php">
             <i class="fas fa-shopping-cart"></i>
@@ -68,7 +40,19 @@
     <section class="client-menu">
     <?php
         require_once('./php/dbhelp.php');
-        $sql = 'select * from menu';
+        //Tìm kiếm
+        if(isset($_GET["search-click"])){
+            $s_text = '';
+            if (isset($_GET["search-holder"])) {
+                $s_text = $_GET["search-holder"];
+            }
+            if ($s_text != '') {
+                $sql = 'select * from menu where Name like "%'.$s_text.'%"';
+            }
+        }
+        else {
+            $sql = 'select * from menu';
+        }
         $menuList = executeResult($sql);
         foreach($menuList as $std){
             echo
@@ -90,28 +74,6 @@
         </article>';
         }
     ?>
-         <div class="clearfix"></div>
-        <!-- Chuyển trang -->
-        <div class="page-move">
-            <a href="#" class="move">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            <a href="#" class="move">
-                    ...
-                </a>
-            <a href="#" class="move">
-                    3
-                </a>
-            <a href="#" class="move">
-                    2
-                </a>
-            <a href="#" class="move">
-                    1
-                </a>
-            <a href="#" class="move">
-                <i class="fas fa-angle-left"></i>
-            </a>
-        </div>
     </section>
     <div class="confirm-order-modal">
         <div id="confirm-order-container">
@@ -119,13 +81,18 @@
                 Hãy chọn số lượng cho món ăn này
             </h2>
             <div class="confirm-order-number">
-                <button id="minus" onclick="decreasenumber()"><i class="fas fa-minus"></i></button>
-                <span id="number">1</span>
-                <button id="plus" onclick="increasenumber()"><i class="fas fa-plus"></i></button>
+                <form enctype="multipart/form-data" method="post">
+                    <button id="minus" onclick="decreasenumber()"><i class="fas fa-minus"></i></button>
+                    <input id="number" name="number" value="1" size="3">
+                    <button id="plus" onclick="increasenumber()"><i class="fas fa-plus"></i></button>
+                </form>
             </div>
             <div class="confirm-order-btn">
-                <a class="confirm-btn" onclick="closeConfirmOrderModal()">Xác nhận</a>
-                <a class="cancle-btn" onclick="closeConfirmOrderModal()">Hủy</a>
+                <form enctype="multipart/form-data" method="post">
+                    <input type="number" class="food-ID" name="ID" value="<?=$ID?>">
+                    <input type="submit" class="confirm-btn" name="confirm-order" value="Xác nhận">
+                    <button class="cancle-btn" onclick="closeConfirmOrderModal()">Hủy</button>
+                </form>
             </div>
         </div>
     </div>
