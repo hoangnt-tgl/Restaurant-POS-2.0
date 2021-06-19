@@ -1,13 +1,50 @@
+<?php
+
+if (!empty($_POST)) {
+    $s_fullname = $s_phone = $s_Email = $s_Address = $s_method = $s_Table = '';
+	if (isset($_POST['Name'])) {
+		$s_fullname = $_POST['Name'];
+	}
+	if (isset($_POST['Phone'])) {
+		$s_phone = $_POST['Phone'];
+	}
+    if (isset($_POST['Email'])) {
+		$s_Email = $_POST['Email'];
+	}
+    if (isset($_POST['Address'])) {
+		$s_Address = $_POST['Address'];
+	}
+    if (isset($_POST['Table'])) {
+		$s_Table = $_POST['Table'];
+	}
+    /////
+    if ($s_fullname != '' and $s_Email == ''){
+        $s_method ='takeawway';
+    }
+    else if ($s_fullname != '' and $s_Email != ''){
+        $s_method ='delivery';
+    }
+    else{
+        $s_method ='restaurant';
+    }
+    require_once ('dbhelp.php');
+    $sql = "INSERT INTO `khanh_hang`(`TEN`, `SDT`, `EMAIL`, `DIA_CHI`, `SO_BAN`, `PHUONG_THUC`, `THANH_TOAN`) 
+    VALUES ('$s_fullname','$s_phone','$s_Email','$s_Address','$s_Table','$s_method','')";
+    execute($sql);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/eatmethodmain.css">
-    <script src='./main.js' ></script> 
+    <link rel="stylesheet" href="./eatmethodmain.css">
+    <script src='./main.js'></script>
 </head>
+
 <body>
     <div id="box">
         <header id="site-header">
@@ -25,7 +62,7 @@
             </div>
         </header>
         <div class="invoice-box">
-            <table cellpadding="0" cellspacing="0">
+            <table cellpadding="0" cellspacing="0" id ='manyitem'>
                 <tr class="top">
                     <td colspan="2">
                         <table>
@@ -33,60 +70,24 @@
                                 <td class="title">
                                     Invoice
                                 </td>
-
-                                <td>
-                                    Invoice #: 123<br /> Created: January 1, 2021<br /> Due: February 1, 2021
-                                </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
 
-                <tr class="information">
-                    <td colspan="2">
-                        <table>
-                            <tr>
-                                <td>
-                                    Nova, Inc.<br /> 69/96 Sunny Road<br /> Sunnyville, CA 12345
-                                </td>
-
-                                <td>
-                                    Acme Corp.<br /> John Doe<br /> john@example.com
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
+              
                 <tr class="heading">
                     <td>Item</td>
 
                     <td>Price</td>
                 </tr>
+               
+                    <?php
+                require_once('dbhelp.php');
+                $sql = 'select * from mon';
+                $List = executeResult($sql);
+                    ?>
 
-                <tr class="item">
-                    <td>Beefsteak</td>
-
-                    <td>300.000 đ </td>
-                </tr>
-
-                <tr class="item">
-                    <td>Spaghetti</td>
-
-                    <td>300.000 đ </td>
-                </tr>
-
-                <tr class="item last">
-                    <td> Coca Cola </td>
-
-                    <td> 45.000 đ </td>
-                </tr>
-
-
-                <tr class="total">
-                    <td></td>
-
-                    <td>Total: 645.000 đ </td>
-                </tr>
             </table>
         </div>
         <div class="button-box">
@@ -112,19 +113,21 @@
     </div>
 
     <div id="popup1" class="overlay">
-        <div class="login-box">
+        <div class="login-box"  >
             <h2>TAKEAWAY</h2>
-            <form>
+            <form method="post">
                 <div class="user-box">
-                    <input type="text" name="" required="">
+                    <input type="text" name="Name" id = "Name" >
                     <label>Name</label>
-                </div>
+                </div> 
                 <div class="user-box">
-                    <input type="text" name="" required="">
+                    <input type="text" name="Phone" id = "Phone" >
                     <label>Phone Number</label>
                 </div>
+             
                 <a href="#">
-                    <a href="paymentmethod.html"> Continue </a>
+                    <button > Confirm </button>
+                    <a href="paymentmethod.php"> Continue </a>
                 </a>
             </form>
         </div>
@@ -133,25 +136,26 @@
     <div id="popup2" class="overlay">
         <div class="login-box">
             <h2>DELIVERY</h2>
-            <form>
+            <form method="post">
                 <div class="user-box">
-                    <input type="text" name="" required="">
+                    <input type="text" name="Name" id = "Name" >
                     <label>Name</label>
-                </div>
+                </div> 
                 <div class="user-box">
-                    <input type="text" name="" required="">
+                    <input type="text" name="Phone" id = "Phone" >
                     <label>Phone Number</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" name="" required="">
+                    <input type="text" name="Email" >
                     <label>Email</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" name="" required="">
+                    <input type="text" name="Address" >
                     <label>Address</label>
                 </div>
                 <a href="#">
-                    <a href="paymentmethod.html"> Continue </a>
+                    <button> Confirm </button>
+                    <a href="paymentmethod.php"> Continue </a>
                 </a>
             </form>
         </div>
@@ -160,9 +164,10 @@
     <div id="popup3" class="overlay">
         <div class="login-box">
             <h2>JOIN TABLE</h2>
-            <form>
+            <form method="post">
                 <div class="btn-group">
-                    <button class='btn-group-button'>Table 1</button>
+                    <input type = "hidden" name = "Table" value = "huy" />
+                    <button class='btn-group-button' name = "huy" value = "1">Table 1</button>
                     <button class='btn-group-button'>Table 2</button>
                     <button class='btn-group-button'>Table 3</button>
                     <button class='btn-group-button'>Table 4</button>
@@ -184,14 +189,25 @@
                     <button class='btn-group-button'>Table 20</button>
                 </div>
                 <a href="#">
-                    <a href="paymentmethod.html"> Continue </a>
+                    <a href="paymentmethod.php"> Continue </a>
                 </a>
             </form>
         </div>
     </div>
     <footer>
     </footer>
-
+    <script>
+        var list_of_order = <?php echo json_encode($List); ?>;
+        var total = 0;
+        for (i = 0; i < list_of_order.length; i++)
+        {
+            var name_of_dish = list_of_order[i]['TEN'];
+            var price_of_dish = list_of_order[i]['GIA'];
+            document.getElementById("manyitem").innerHTML = document.getElementById("manyitem").innerHTML + '<tr class="item"> <td>'+name_of_dish + '</td><td>' + price_of_dish +' đ </td></tr>'
+            total += parseInt(price_of_dish);
+        }
+        document.getElementById("manyitem").innerHTML += '<tr class="total"> <td></td><td>Total: '+total+' đ </td></tr>' 
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+<!-- Page header -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Food Detail</title>
+    <link rel="stylesheet" href="fooddetail.css">
+</head>
+
+<body>
+    <!-- Body header -->
+    <header id="body-header">
+        <a href="../SE_project/mainPage.html">
+            <img class="logo" src="../images/Nova.jpg" alt="Logo">
+        </a>
+        <a class="detail-cart-plus" onclick="openConfirmOrderModal()">
+            <i class="fas fa-cart-plus"></i>
+            <h3 class="icon-name">Thêm vào giỏ hàng</h3>
+        </a>
+        <a class="detail-cart" href="#">
+            <i class="fas fa-shopping-cart"></i>
+            <h3 class="icon-name">Giỏ hàng</h3>
+        </a>
+        <a class="menu-back" href="../clientmenu/clientmenu.html">
+            <i class="fas fa-th"></i>
+            <h3 class="icon-name">Menu</h3>
+        </a>
+    </header>
+    <div class="clearfix"></div>
+    <!-- Sản phẩm -->
+    <section class="product-infor">
+        <article class="product">
+            <div class="product-prn">
+                <img class="food-picture" src="../images/Ga_Dot_La_Truc_O_Thum/hinh-3.jpg" alt="Chicken">
+                <div class="clearfix"></div>
+                <div class="food-review">
+                    <span class="food-review-content">Đánh giá: </span>
+                    <span class="food-review-level">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                </div>
+                <form class="note-container">
+                    <input class="note-box" type="text" placeholder="Ghi chú">
+                </form>
+            </div>
+            <div class="clearfix"></div>
+            <div class="product-content">
+                <h2 class="food-np">
+                    <span class="food-name">Tên món ăn: Gà Đốt Lá Chúc Ô Thum</span>
+                    <span class="food-price">Giá: 300.000đ/phần</span>
+                </h2>
+                <h2 class="food-ammount">Số lượng hiện có: 1000 phần</h2>
+                <h5 class="food-decription">
+                    Gà Đốt Lá Chúc Ô Thum là một món ăn đặt sản của vùng Bảy Núi ở An Giang. Thực khách muốn thưởng thức
+                    <br> gà đốt lá chúc Ô Thum, thì phải chờ đợi tối thiểu 40 phút để đầu bếp thực hiện các công đoạn chế biến. Ăn gà
+                    <br> đốt lá chúc Ô Thum, thực khách cần phải kiên nhẫn chờ đợi nhưng khi món ăn lên, hương vị đậm đà, thơm
+                    <br> ngon của món ăn sẽ bù đắp lại công chờ đợi một cách xứng đáng.
+                    <br> Để làm món gà đốt lá chúc Ô Thum, người ta phải chọn nguyên liệu rất kỹ lưỡng. Gà để làm món ăn này phải
+                    <br> là gà đồi, giống gà ta mà mỗi con chỉ có trọng lượng từ 1,3kg đến 1.8kg, loại gà này tuy nhỏ nhưng thịt rất chắc
+                    <br> và ngọt. Đặc biệt, người ta không làm sẵn gà để bán cho thực khách, mà khi khách gọi thì gà mới được thịt, tẩm
+                    <br> ướp và chế biến. Chính vì vậy thịt gà luôn tươi ngon, ngọt nước. Điều tạo nên vị ngon của món gà đốt lá chúc
+                    <br> Ô Thum, không chỉ nằm ở nguyên liệu mà còn nằm ở bí quyết chế biến riêng của người dân tại đây. Ngoài các
+                    <br> gia vị thường thấy như muối, sả, ớt, tỏi thì một loại gia vị đặc biệt cho món ăn này đó chính là lá chúc, người
+                    <br> ta sẽ ướp gà với loại lá này để tạo vị ngon đặc trưng.
+                    <br> Gà đốt lá chúc Ô Thum chuẩn vị sau khi đốt sẽ được lót một lớp lá sả, lá chúc cho thêm dầu, rồi đốt tiếp từ
+                    <br> 15-20 phút để da vàng giòn. Lửa đốt gà phải đốt lửa thật to, sau đó nhỏ dần để thịt gà chín đều. Gà đốt khi
+                    <br> lên mâm sẽ có một lớp da giòn, màu vàng xuộm, vị ngọt đậm đà và đặc biệt là cái mùi thơm đặc trưng không
+                    <br> lẫn đi đâu được.
+                </h5>
+            </div>
+            <div class="clearfix"></div>
+        </article>
+    </section>
+    <div class="confirm-order-modal">
+        <div id="confirm-order-container">
+            <h2 class="confirm-order-content">
+                Hãy chọn số lượng cho món ăn này
+            </h2>
+            <div class="confirm-order-number">
+                <button id="minus" onclick="decreasenumber()"><i class="fas fa-minus"></i></button>
+                <span id="number">1</span>
+                <button id="plus" onclick="increasenumber()"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="confirm-order-btn">
+                <a class="confirm-btn" onclick="closeConfirmOrderModal()">Xác nhận</a>
+                <a class="cancle-btn" onclick="closeConfirmOrderModal()">Hủy</a>
+            </div>
+        </div>
+    </div>
+    <footer class="contact">
+        <article class="contact-info">
+            <h4 class="contact-text"><i class="fas fa-location-arrow"> Address: </i> Đại học bách khoa TPHCM, Thủ Đức, TPHCM</h4>
+            <h4 class="contact-text"><i class="fas fa-envelope"> Email: </i> hau.pham1304@hcmut.edu.vn</h4>
+            <h4 class="contact-text"><i class="fas fa-phone"> Telephone: </i> 0943765795</h4>
+        </article>
+    </footer>
+    <!-- File JavaScript -->
+    <script src="fooddetail.js"></script>
+</body>
+
+</html>
