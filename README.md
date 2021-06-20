@@ -21,12 +21,6 @@
 	+ Login
 	+ Table management
 	+ Display account information
-	+ Receive data from adafruit
-	+ Fetch data and turn on/off light system and water pump system automatically
-	+ Statistic feature
-	+ Notification feature
-	+ Final report
-
 * Pham Cong Hau - [haupham1304](https://github.com/haupham1304) :
   	+ Display menu
   	+ Menu management
