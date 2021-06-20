@@ -5,8 +5,10 @@ if (!empty($_POST)) {
 	if (isset($_POST['payment'])) {
 		$s_payment = $_POST['payment'];
 	}
-    require_once ('./php/dbhelp.php');
+    require_once ('dbhelp.php');
     if ($s_payment == 'delete'){
+        $sql1 = "DELETE FROM `mon`  WHERE 1";
+        execute($sql1);
         $sql = "DELETE FROM `khanh_hang`  WHERE 1";
         execute($sql);
         header('Location: cart.php');
@@ -67,8 +69,8 @@ if (!empty($_POST)) {
                     <h1> NOVA RESTAURANT </h1>
                 </div>
                 <div class="tab">
-                    <a class="tablinks" href="mainPage.html">Home Page</a>
-                    <a class="tablinks" href="../Menu/clientmenu.html">Menu</a>
+                    <a class="tablinks" href="mainPage.php">Home Page</a>
+                    <a class="tablinks" href="clientmenu.php">Menu</a>
                 </div>
             </div>
         </header>
@@ -87,7 +89,7 @@ if (!empty($_POST)) {
                 </tr>
                 </tr>
                 <?php
-                require_once('./php/dbhelp.php');
+                require_once('dbhelp.php');
                 $sql = 'select * from mon';
                 $List = executeResult($sql);
                 $sql1 = 'select * from khanh_hang';

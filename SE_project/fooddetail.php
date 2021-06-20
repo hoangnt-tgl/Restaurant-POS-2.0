@@ -1,5 +1,5 @@
 <?php
-require_once('./php/dbhelp.php');
+require_once('dbhelp.php');
 // Lấy dữ liệu
 $food_ID = '';
 if (isset($_GET['id'])) {
@@ -75,7 +75,7 @@ if (isset($_POST["confirm-order"])) {
 <body>
     <!-- Body header -->
     <header id="body-header">
-        <a href="../SE_project/mainPage.html">
+        <a href="../SE_project/mainPage.php">
             <img class="logo" src="../images/Nova.jpg" alt="Logo">
         </a>
         <a class="detail-cart-plus" onclick="openConfirmOrderModal()">

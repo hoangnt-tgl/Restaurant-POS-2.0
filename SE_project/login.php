@@ -14,15 +14,18 @@
     <section class="login">
         <article class="contact-form">
             <h3>Log in</h3>
-            <form action="">
+            <form action="check_account.php" method="post">
                 <div class="form-group">
                     <!-- inputs -->
-                    <input type="text" placeholder="email" class="form-control" name="name">
-                    <input type="password" placeholder="password" class="form-control" name="email">
+                    <?php if (isset($_GET['error'])) { ?>
+     		        <p class="error"><?php echo $_GET['error']; ?></p>
+     	            <?php } ?>
+                    <input type="text" placeholder="User Name" class="form-control" name="uname">
+                    <input type="password" placeholder="Password" class="form-control" name="password">
+                    <button type="submit" class="login-btn btn">Log in</button>
                 </div>
             </form>
             <!-- button -->
-            <a href="employeePage.html"><button class="login-btn btn">Log in</button></a>
         </article>
     </section>
     

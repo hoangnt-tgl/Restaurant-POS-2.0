@@ -31,9 +31,8 @@ html {
 }
 
 .logo {
-    width: 150px;
+    width: 20vh;
     height: 20vh;
-    width: 25%;
     float: left;
 }
 

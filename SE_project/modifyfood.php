@@ -1,5 +1,5 @@
 <?php
-require_once('./php/dbhelp.php');
+require_once('dbhelp.php');
 // Cập nhật dữ liệu vào database
 if(!empty($_POST)){
     $f_ID = $f_name = $f_price = $f_ammount = $f_decription= '';
@@ -113,7 +113,7 @@ if (isset($_GET['id'])) {
 <body>
     <!-- Body header -->
     <header id="body-header">
-        <a href="../SE_project/mainPage.html">
+        <a href="../SE_project/mainPage.php">
             <img class="logo" src="./images/Nova.jpg" alt="Logo">
         </a>
     </header>

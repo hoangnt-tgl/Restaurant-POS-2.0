@@ -1,5 +1,5 @@
 <?php
-require_once('./php/dbhelp.php');
+require_once('dbhelp.php');
 // Xóa
 if(isset($_POST["confirm-delete"])){
     $f_ID = '';
@@ -34,7 +34,7 @@ if(isset($_POST["confirm-delete"])){
 <body>
     <!-- Body header -->
     <header id="body-header">
-        <a href="../SE_project/mainPage.html">
+        <a href="mainPage.php">
             <img class="logo" src="./images/Nova.jpg" alt="Logo">
         </a>
         <form class="search-container" method="get">
@@ -48,7 +48,7 @@ if(isset($_POST["confirm-delete"])){
     <!-- Danh mục sản phẩm -->
     <section class="manager-menu">
     <?php
-        require_once('./php/dbhelp.php');
+        require_once('dbhelp.php');
         //Tìm kiếm
         if(isset($_GET["search-click"])){
             $s_text = '';

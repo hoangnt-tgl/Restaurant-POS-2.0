@@ -1,5 +1,5 @@
 <?php
-require_once('./php/dbhelp.php');
+require_once('dbhelp.php');
 // Thêm dữ liệu vào database
 if (isset($_POST["confirm-order"])){
     $f_ID = $f_name = $f_price = $f_number = $f_money = $f_link = '';
@@ -43,7 +43,7 @@ if (isset($_POST["confirm-order"])){
 <body>
     <!-- Body header -->
     <header id="body-header">
-        <a href="../SE_project/mainPage.html">
+        <a href="mainPage.php">
             <img class="logo" src="./images/logo.png" alt="Logo">
         </a>
         <form class="search-container" method="get">
@@ -61,7 +61,7 @@ if (isset($_POST["confirm-order"])){
     <!-- Danh mục sản phẩm -->
     <section class="client-menu">
     <?php
-        require_once('./php/dbhelp.php');
+        require_once('dbhelp.php');
         //Tìm kiếm
         if(isset($_GET["search-click"])){
             $s_text = '';

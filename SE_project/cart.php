@@ -25,8 +25,8 @@
             </div>
             <!-- tab -->
             <div class="tab">
-                <a class="tablinks" href="mainPage.html">Home Page</a>
-                <a class="tablinks" href="../Menu/clientmenu.html">Menu</a>
+                <a class="tablinks" href="mainPage.php">Home Page</a>
+                <a class="tablinks" href="clientmenu.php">Menu</a>
             </div>
         </header>
         <!-- ...........................-->
@@ -35,7 +35,7 @@
             <div class="container">
                 <section id="cart">
                 <?php
-                    require_once('./php/dbhelp.php');
+                    require_once('dbhelp.php');
                     $sql = 'select * from mon';
                     $List = executeResult($sql);
                     

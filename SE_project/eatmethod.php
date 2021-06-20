@@ -27,7 +27,7 @@ if (!empty($_POST)) {
     else{
         $s_method ='restaurant';
     }
-    require_once ('./php/dbhelp.php');
+    require_once ('dbhelp.php');
     $sql = "INSERT INTO `khanh_hang`(`TEN`, `SDT`, `EMAIL`, `DIA_CHI`, `SO_BAN`, `PHUONG_THUC`, `THANH_TOAN`) 
     VALUES ('$s_fullname','$s_phone','$s_Email','$s_Address','$s_Table','$s_method','')";
     if ($s_Table != '') 
@@ -35,7 +35,7 @@ if (!empty($_POST)) {
         execute($sql1);
     }
     execute($sql);
-    require_once ('./php/dbhelp.php');
+    require_once ('dbhelp.php');
 
     header('Location: paymentmethod.php');
     die();
@@ -75,8 +75,8 @@ if (!empty($_POST)) {
                     <h1> NOVA RESTAURANT </h1>
                 </div>
                 <div class="tab">
-                    <a class="tablinks" href="mainPage.html">Home Page</a>
-                    <a class="tablinks" href="../Menu/clientmenu.html">Menu</a>
+                    <a class="tablinks" href="mainPage.php">Home Page</a>
+                    <a class="tablinks" href="clientmenu.php">Menu</a>
                 </div>
             </div>
         </header>
@@ -101,7 +101,7 @@ if (!empty($_POST)) {
                 </tr>
                
                 <?php
-                    require_once('./php/dbhelp.php');
+                    require_once('dbhelp.php');
                     $sql = 'select * from mon';
                     $List = executeResult($sql);
                     $sql1 = 'SELECT * FROM `table`';

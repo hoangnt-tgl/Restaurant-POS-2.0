@@ -2,7 +2,7 @@
 
 if (!empty($_POST)) 
 {
-      require_once('./php/dbhelp.php');
+      require_once('dbhelp.php');
       $sql_mon = 'select * from mon';
       $List_mon = executeResult($sql_mon);
       $sql_kh = 'select * from khanh_hang';
@@ -28,6 +28,8 @@ if (!empty($_POST))
      $sql_delete = " DELETE FROM `khanh_hang` WHERE 1=1";
      execute($sql_delete);
      execute($sql_insert);
+     $sql1 = "DELETE FROM `mon`  WHERE 1";
+    execute($sql1);
     }
 }
 ?>
@@ -70,8 +72,8 @@ width: 100px;
                     <h1> NOVA RESTAURANT </h1>
                 </div>
                 <div class="tab">
-                    <a class="tablinks" href="mainPage.html">Home Page</a>
-                    <a class="tablinks" href="../Menu/clientmenu.html">Menu</a>
+                    <a class="tablinks" href="mainPage.php">Home Page</a>
+                    <a class="tablinks" href="clientmenu.php">Menu</a>
                 </div>
             </div>
         </header>
@@ -91,7 +93,7 @@ width: 100px;
                     </td>
                 </tr>
                 <?php
-                require_once('./php/dbhelp.php');
+                require_once('dbhelp.php');
                 $sql = 'select * from mon';
                 $List = executeResult($sql);
                 $sql1 = 'select * from khanh_hang';
