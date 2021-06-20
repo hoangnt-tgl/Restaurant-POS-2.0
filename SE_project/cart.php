@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="./cart.css">
-        <script src='./main.js'></script>
+        <link rel="stylesheet" href="./css/cart.css">
 
     </head>
     <!-- tieu de -->
@@ -36,7 +35,7 @@
             <div class="container">
                 <section id="cart">
                 <?php
-                    require_once('dbhelp.php');
+                    require_once('./php/dbhelp.php');
                     $sql = 'select * from mon';
                     $List = executeResult($sql);
                     
@@ -55,7 +54,7 @@
             var list_of_order = <?php echo json_encode($List); ?>;
             var total = 0;
             for (i = 0; i < list_of_order.length; i++){
-                var link = list_of_order[i]['LINK'];
+                var link = '.'+list_of_order[i]['LINK'].slice(45);
                 var name_of_dish = list_of_order[i]['TEN'];
                 var price_of_dish = list_of_order[i]['GIA'];
                 document.getElementById("cart").innerHTML = document.getElementById("cart").innerHTML + '<article class="product"><header><a class="remove"><img src="'+link+'" alt=""><h3>Remove product</h3></a></header><div class="content"><h1>'+ name_of_dish +'</h1></div><footer class="content"><span class="qt-minus">-</span><span class="qt">1</span><span class="qt-plus">+</span><h2 class="full-price">'+price_of_dish+ 'đ</h2><h2 class="price">'+price_of_dish +'đ</h2></footer></article>'

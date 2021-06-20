@@ -2,7 +2,7 @@
 
 if (!empty($_POST)) 
 {
-      require_once('dbhelp.php');
+      require_once('./php/dbhelp.php');
       $sql_mon = 'select * from mon';
       $List_mon = executeResult($sql_mon);
       $sql_kh = 'select * from khanh_hang';
@@ -39,7 +39,7 @@ if (!empty($_POST))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./reviewmain.css">
+    <link rel="stylesheet" href="./css/reviewmain.css">
     <style>
 .button {
   background-color: rgb(78, 213, 218);
@@ -91,7 +91,7 @@ width: 100px;
                     </td>
                 </tr>
                 <?php
-                require_once('dbhelp.php');
+                require_once('./php/dbhelp.php');
                 $sql = 'select * from mon';
                 $List = executeResult($sql);
                 $sql1 = 'select * from khanh_hang';

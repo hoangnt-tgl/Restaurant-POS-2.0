@@ -11,7 +11,7 @@ if (!empty($_POST)) {
     if (isset($_POST['Email'])) {
 		$s_Email = $_POST['Email'];
 	}
-    if (isset($_POST['Address'])) {
+    if (isset($_POST['Address']) && $_POST['Address']!='') {
 		$s_Address = $_POST['Address'];
 	}
     if (isset($_POST['button_table'])) {
@@ -27,7 +27,7 @@ if (!empty($_POST)) {
     else{
         $s_method ='restaurant';
     }
-    require_once ('dbhelp.php');
+    require_once ('./php/dbhelp.php');
     $sql = "INSERT INTO `khanh_hang`(`TEN`, `SDT`, `EMAIL`, `DIA_CHI`, `SO_BAN`, `PHUONG_THUC`, `THANH_TOAN`) 
     VALUES ('$s_fullname','$s_phone','$s_Email','$s_Address','$s_Table','$s_method','')";
     if ($s_Table != '') 
@@ -35,7 +35,7 @@ if (!empty($_POST)) {
         execute($sql1);
     }
     execute($sql);
-    require_once ('dbhelp.php');
+    require_once ('./php/dbhelp.php');
 
     header('Location: paymentmethod.php');
     die();
@@ -49,7 +49,7 @@ if (!empty($_POST)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="eatmethod.css">
+    <link rel="stylesheet" href="./css/eatmethod.css">
     <style>
 .btn-group-button1 {
     width: 25%;
@@ -100,13 +100,13 @@ if (!empty($_POST)) {
                     <td>Price</td>
                 </tr>
                
-                    <?php
-                require_once('dbhelp.php');
-                $sql = 'select * from mon';
-                $List = executeResult($sql);
-                $sql1 = 'SELECT * FROM `table`';
-                $List1 = executeResult($sql1);
-                    ?>
+                <?php
+                    require_once('./php/dbhelp.php');
+                    $sql = 'select * from mon';
+                    $List = executeResult($sql);
+                    $sql1 = 'SELECT * FROM `table`';
+                    $List1 = executeResult($sql1);
+                ?>
 
             </table>
         </div>

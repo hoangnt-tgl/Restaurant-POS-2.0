@@ -5,7 +5,7 @@ if (!empty($_POST)) {
 	if (isset($_POST['payment'])) {
 		$s_payment = $_POST['payment'];
 	}
-    require_once ('dbhelp.php');
+    require_once ('./php/dbhelp.php');
     if ($s_payment == 'delete'){
         $sql = "DELETE FROM `khanh_hang`  WHERE 1";
         execute($sql);
@@ -30,7 +30,7 @@ if (!empty($_POST)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="paymentmethod.css">
+    <link rel="stylesheet" href="./css/paymentmethod.css">
     <script src='./main.js'></script>
     <style>
 .btn-group-button {
@@ -87,7 +87,7 @@ if (!empty($_POST)) {
                 </tr>
                 </tr>
                 <?php
-                require_once('dbhelp.php');
+                require_once('./php/dbhelp.php');
                 $sql = 'select * from mon';
                 $List = executeResult($sql);
                 $sql1 = 'select * from khanh_hang';
