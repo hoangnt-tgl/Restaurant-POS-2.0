@@ -7,15 +7,16 @@
 * XAMPP - version 8.0.7 (server)
 
 ## Features
-* Turn on/off light system and water pump system automtically (based on the data fetched from database)
-* Draw graphs representing current soil and light values
+* Your restaurant just got safer and more advanced! Save time and money by allowing customers to view your menus with QR codes. MenuSavvy provides an intuitive way for customers to access your menus digitally that helps drive safety, compliance, and green initiatives. Physical menus carry viruses and bacteria, and have to be printed every time an item changes—digital menus are safer, cheaper, and more flexible.
 
-<ins>***Note***</ins>: Use the small web app in folder "test_send_data" to send data to Adafruit Server
+* All your guests need to do is point the camera at the QR code on their table and they will instantly be able to view a menu your menu, optimized for viewing on their mobile device.
+
+* Our dashboard gives restaurant staff the power to control. allows you to add, edit, and delete menu items within seconds. It also allows you to easily print your QR codes for display within your restaurant.
 
 ## About
 
 ***Powered by Nova Team***:
-* Nguyen Trong Hoang - [tronghoangbk](https://github.com/tphiepbk) (main coder) : 
+* Nguyen Trong Hoang - [tronghoangbk](https://github.com/tronghoangbk): 
 	+ Account management
 	+ Login
 	+ Table management
