@@ -7,7 +7,7 @@
 * XAMPP - version 8.0.7 (server)
 
 ## Features
-* Your restaurant just got safer and more advanced! Save time and money by allowing customers to view your menus with QR codes. MenuSavvy provides an intuitive way for customers to access your menus digitally that helps drive safety, compliance, and green initiatives. Physical menus carry viruses and bacteria, and have to be printed every time an item changes—digital menus are safer, cheaper, and more flexible.
+* Your restaurant just got safer and more advanced! Save time and money by allowing customers to view your menus with QR codes. NovaTeam provides an intuitive way for customers to access your menus digitally that helps drive safety, compliance, and green initiatives. Physical menus carry viruses and bacteria, and have to be printed every time an item changes—digital menus are safer, cheaper, and more flexible.
 
 * All your guests need to do is point the camera at the QR code on their table and they will instantly be able to view a menu your menu, optimized for viewing on their mobile device.
 
