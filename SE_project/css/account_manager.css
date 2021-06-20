@@ -1,26 +1,8 @@
 body {
   width: 100%;
   height: 100%;
-}
-
-header{
-  position: relative;
-  display: flex;
-  background-color: green;
-  height: 3rem;
-  width: 100%;
-}
-header .logo {
   position: absolute;
-  max-width: 3rem;
-
-}
-header .name{
-  position: absolute;
-  left: 10%;
-  font-size: 2rem;
-  text-transform: capitalize;
-  /* animation: slideFromRight 5s ease-in-out 1; */ 
+  overflow: auto;
 }
 
 
@@ -71,9 +53,7 @@ header .name{
 .show {
   display: block;
 }
-/* .show_info {
-  display: block;
-} */
+
 
 /* Style the navigation menu inside the left column */
 #myMenu {
@@ -372,3 +352,89 @@ header .name{
   height: auto;
 }
 
+.navbar {
+  transition: all 0.4s;
+}
+
+.navbar .nav-link {
+  color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+  background: #fff;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+  color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+  color: #555;
+  text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+  color: #555;
+}
+.account{
+  width: 100%;
+  height: 100%;
+}
+
+.dropbtn {
+  color: #fff;
+  background-color: #6c757d;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 100%;
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+  width:30%;
+  
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #58a8ee;
+  min-width: 160px;
+  bottom: 50px;
+  z-index: 10;
+  top:56px;
+}
+
+.dropup-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: gray;
+}
+
+.dropup-content a:hover {background-color: rgb(105, 83, 83)}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+.dropup:hover .dropbtn {
+  background-color: #5a6268;
+}

@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #ffffff;
+    color: #5a5a5a;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* REUSABLE */
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Header */
+
+#body-header {
+    background-color: rgba(87, 187, 184, 0.7);
+    background-size: cover;
+    height: 20vh;
+}
+
+.logo {
+    width: 150px;
+    height: 20vh;
+    width: 25%;
+    float: left;
+}
+
+.menu-back,
+.detail-cart,
+.detail-cart-plus {
+    text-decoration: none;
+    text-align: center;
+    margin-top: 15px;
+    margin-right: 70px;
+    color: black;
+    cursor: pointer;
+    font-size: 312.5%;
+    width: 6%;
+    float: right;
+    transition: all .3s;
+}
+
+.menu-back:hover,
+.menu-back:active,
+.detail-cart:hover,
+.detail-cart:active,
+.detail-cart-plus:hover,
+.detail-cart-plus:active {
+    color: dimgray;
+}
+
+.icon-name {
+    font-size: 20px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.menu-back:hover .icon-name,
+.detail-cart:hover .icon-name,
+.detail-cart-plus:hover .icon-name {
+    opacity: 1;
+    color: #ffffff;
+}
+
+
+/* Product */
+
+.product-infor {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.product {
+    border: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.product-prn {
+    float: left;
+}
+
+.food-picture {
+    width: 70%;
+    margin-left: 50px;
+}
+
+.food-review,
+.note-container {
+    width: 70%;
+    color: black;
+    font-size: 150%;
+    margin-top: 20px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+.food-review-level {
+    color: rgb(245, 245, 20);
+}
+
+.note-box {
+    color: black;
+    font-size: 100%;
+    padding: 30px;
+}
+
+.product-content {
+    margin-top: -450px;
+    margin-right: 40px;
+    float: right;
+}
+
+.food-name,
+.food-price,
+.food-ammount {
+    color: black;
+    margin-top: 15px;
+    margin-right: 30px;
+    font-weight: 500;
+}
+
+.food-decription {
+    color: black;
+    margin-top: 15px;
+    margin-right: 50px;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: justify;
+}
+
+
+/* Confirm Order Modal */
+
+.confirm-order-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: auto;
+    display: none;
+    justify-content: center;
+}
+
+#confirm-order-container {
+    background-color: #ffffff;
+    border: 1px solid black;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    margin: 500px;
+    margin-top: 300px;
+    position: relative;
+    overflow: auto;
+}
+
+.confirm-order-content {
+    color: black;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 125%;
+    font-weight: 500;
+    text-align: center;
+}
+
+.confirm-order-number {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#minus,
+#plus {
+    border: 1px solid rgb(218, 218, 176);
+    color: black;
+    cursor: pointer;
+    font-size: 100%;
+    font-weight: 300;
+    width: 40px;
+    height: 40px;
+    transform: all .3s;
+}
+
+#minus:hover,
+#minus:active,
+#plus:hover,
+#plus:active {
+    color: #ffffff;
+    background-color: #9e9e9e;
+}
+
+#number {
+    color: black;
+    font-size: 150%;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.confirm-order-btn {
+    text-align: center;
+}
+
+.confirm-btn,
+.cancle-btn {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    background-color: #e67e22;
+    padding: 7px 0px;
+    border-radius: 20px;
+    margin: 0 10px;
+    margin-bottom: 10px;
+    width: 130px;
+    text-align: center;
+    transition: all .3s;
+    display: inline-block;
+}
+
+.confirm-btn:hover,
+.confirm-btn:active,
+.cancle-btn:hover,
+.cancle-btn:active {
+    background-color: #d35400;
+}
+
+
+/* Footer */
+
+.contact {
+    background-color: #000;
+    text-align: left;
+    height: 30vh;
+    padding-top: 40px;
+}
+
+.contact-info {
+    margin-left: 60px;
+}
+
+.contact-text {
+    color: #ffffff;
+    margin-top: 20px;
+}

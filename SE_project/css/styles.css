@@ -254,16 +254,16 @@ Header
 }
 
 .section-center {
-  padding: 4rem 0;
-  width: 85%;
+  padding: 2rem 0;
+  width: 70%;
   margin: 0 auto;
   max-width: 1170px;
+  text-align: center ;
 }
 
 @media screen and (min-width: 992px) {
   .section-center {
-    width: 95vw;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
   }
 }
 /*
@@ -523,7 +523,8 @@ footer
 /* ======================================= employeePage.html ====================================================== */
 
 .employ-header {
-  height: 30vh;
+  position: relative;
+  height: 25vh;
 }
 
 .logo-container,
@@ -539,17 +540,20 @@ footer
 }
 
 .restaurant-name {
+  position: absolute;
   font-size: 1.3rem;
   margin: 4rem 0;
   font-size: 1rem;
+  left: 35vh;
 }
 .logo {
   width: 100%;
-  max-width: 200px;
+  max-width: 25vh;
 }
 
 .logout {
-  text-align: right;
+  position: absolute;
+  right: 0;
   padding: 2rem;
   margin: 2rem 0;
 }
@@ -568,7 +572,9 @@ footer
   }
 }
 .navbar {
+  position: relative;
   margin: 2rem 0;
+
 }
 .navbar li {
   display: inline;
@@ -640,11 +646,55 @@ footer
 }
 .subnav-link {
   display: block;
-  float: left;
-  width: 20%;
   /* font-size: 0.875rem; */
   font-family: var(--ff-primary);
   color: var(--clr-grey-5);
   transition: var(--transition);
   background: var(--clr-primary-light);
+}
+
+
+
+.dropbtn {
+  color: #fff;
+  background-color: #6c757d;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 100%;
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+  width:30%;
+  
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #58a8ee;
+  min-width: 160px;
+  bottom: 50px;
+  z-index: 10;
+  top:56px;
+}
+
+.dropup-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: gray;
+}
+
+.dropup-content a:hover {background-color: rgb(105, 83, 83)}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+.dropup:hover .dropbtn {
+  background-color: #5a6268;
 }

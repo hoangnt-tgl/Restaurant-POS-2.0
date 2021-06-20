@@ -31,7 +31,7 @@ if(!empty($_POST)){
     require_once('dbhelp.php');
     $sql = "insert into account(username, password, position, name, gender, `identity card`, `phone number`, email, address) value ('$_username','$_password','$_position','$_name','$_gender','$_id_card','$_phone','$_email','$_address')";
     execute($sql);
-    header('Location: account_manager.php');
+    header('Location: account_management.php');
     die();
 }
 ?>

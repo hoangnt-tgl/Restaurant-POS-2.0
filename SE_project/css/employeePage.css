@@ -1,0 +1,122 @@
+
+.dropbtn {
+    color: #fff;
+    background-color: #6c757d;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 100%;
+  }
+  
+  .dropup {
+    position: relative;
+    display: inline-block;
+    width:30%;
+    
+  }
+
+  .dropup-content {
+    display: none;
+    position: absolute;
+    background-color: #58a8ee;
+    min-width: 160px;
+    bottom: 50px;
+    z-index: 10;
+    top:56px;
+  }
+  
+  .dropup-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: gray;
+  }
+  
+  .dropup-content a:hover {
+    background-color: rgb(105, 83, 83);
+    color: #fff;
+  }
+  
+  .dropup:hover .dropup-content {
+    display: block;
+  }
+  
+  .dropup:hover .dropbtn {
+    background-color: #5a6268;
+  }
+  body {
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top: 150px;
+  }
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  * {
+    position: relative;
+    margin: 0;
+    padding: 0;
+   }
+
+.avatar {
+  max-width: 200px;
+  top: 50px;
+}
+.avatar-container{
+  text-align: center;
+}
+.infos{
+  position: relative;
+  top: 100px;
+  width: 50%;
+  left: 25%;
+}
+
+.filterDiv {
+  float: left;
+  background-color: green;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 10px;
+  display: none;
+}
+
+.container {
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+  left: 5%;
+  width: 95%;
+  height: 350px;
+  overflow: auto;
+}
+
+.container input {
+  position: relative;
+  left: 38px;
+  top: -42px;
+}
+.free {
+  background-color:green;
+}
+
+.busy{
+  background-color: red;
+}
+footer{
+  height: 100px;
+}
+
+.show {
+  display: block;
+}
+#myBtnContainer{
+  text-align: center;
+}

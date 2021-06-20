@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #ffffff;
+    color: #5a5a5a;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* REUSABLE */
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Header */
+
+#body-header {
+    background-color: rgba(87, 187, 184, 0.7);
+    background-size: cover;
+    height: 17vh;
+}
+
+.logo {
+    width: 150px;
+    height: 17vh;
+    width: 25%;
+    float: left;
+}
+
+.search-container {
+    margin-top: 40px;
+    margin-left: 100px;
+    width: 30%;
+    float: left;
+}
+
+.search-box {
+    padding: 7px;
+}
+
+.search-icon {
+    color: black;
+    padding: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    transition: all .3s;
+}
+
+.filter-top-container {
+    margin-top: 30px;
+    float: left;
+}
+
+.filter-bottom-container {
+    margin-top: 50px;
+    margin-left: -301px;
+    float: left;
+}
+
+.filter-product-top {
+    color: black;
+    padding: 5px;
+}
+
+.filter-product-bottom {
+    color: black;
+    padding: 5px;
+    padding-left: 16px;
+}
+
+.menu-cart {
+    text-decoration: none;
+    text-align: center;
+    margin-top: -2px;
+    margin-right: 100px;
+    color: black;
+    font-size: 312.5%;
+    width: 6%;
+    float: right;
+    transition: all .3s;
+}
+
+.menu-cart:hover,
+.menu-cart:active {
+    color: dimgray;
+}
+
+.cart-name {
+    font-size: 20px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.menu-cart:hover .cart-name {
+    opacity: 1;
+    color: #ffffff;
+}
+
+
+/* Product item */
+
+.client-menu {
+    margin-top: 75px;
+    margin-bottom: 80px;
+}
+
+.product {
+    border: 1px solid #eee;
+    margin: 20px 0;
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+
+.select {
+    width: 500px;
+    height: 250px;
+    width: 30%;
+    margin-left: 50px;
+    float: left;
+}
+
+.select:hover,
+.select:active {
+    filter: brightness(70%) blur(2px);
+}
+
+.content {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    float: left;
+}
+
+.name,
+.price {
+    color: #000;
+    font-size: 125%;
+}
+
+.decription {
+    color: #000;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.btn1 {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    background-color: #e67e22;
+    padding: 15px 30px;
+    border-radius: 20px;
+    margin: 0 10px;
+    width: 190px;
+    text-align: center;
+    transition: all .3s;
+}
+
+.btn1:hover,
+.btn1:active {
+    background-color: #d35400;
+}
+
+.btn2 {
+    text-decoration: none;
+    color: white;
+    background-color: #e67e22;
+    padding: 15px 60px;
+    border-radius: 20px;
+    margin: 0 20px;
+    width: 190px;
+    text-align: center;
+    transition: all .3s;
+}
+
+.btn2:hover,
+.btn2:active {
+    background-color: #d35400;
+}
+
+
+/* Page move */
+
+.page-move {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.move {
+    background-color: #ffffff;
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 7px;
+    text-align: center;
+    float: right;
+    transition: all .3s;
+}
+
+.move:hover,
+.move:active {
+    background-color: darkgray;
+}
+
+
+/* Confirm Order Modal */
+
+.confirm-order-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: auto;
+    display: none;
+    justify-content: center;
+}
+
+#confirm-order-container {
+    background-color: #ffffff;
+    border: 1px solid black;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    margin: 500px;
+    margin-top: 300px;
+    position: relative;
+    overflow: auto;
+}
+
+.confirm-order-content {
+    color: black;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 125%;
+    font-weight: 500;
+    text-align: center;
+}
+
+.confirm-order-number {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#minus,
+#plus {
+    border: 1px solid rgb(218, 218, 176);
+    color: black;
+    cursor: pointer;
+    font-size: 100%;
+    font-weight: 300;
+    width: 40px;
+    height: 40px;
+    transform: all .3s;
+}
+
+#minus:hover,
+#minus:active,
+#plus:hover,
+#plus:active {
+    color: #ffffff;
+    background-color: #9e9e9e;
+}
+
+#number {
+    color: black;
+    font-size: 150%;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.confirm-order-btn {
+    text-align: center;
+}
+
+.confirm-btn,
+.cancle-btn {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    background-color: #e67e22;
+    padding: 7px 0px;
+    border-radius: 20px;
+    margin: 0 10px;
+    margin-bottom: 10px;
+    width: 130px;
+    text-align: center;
+    transition: all .3s;
+    display: inline-block;
+}
+
+.confirm-btn:hover,
+.confirm-btn:active,
+.cancle-btn:hover,
+.cancle-btn:active {
+    background-color: #d35400;
+}
+
+
+/* Footer */
+
+.contact {
+    background-color: #000;
+    text-align: left;
+    height: 30vh;
+    padding-top: 40px;
+}
+
+.contact-info {
+    margin-left: 60px;
+}
+
+.contact-text {
+    color: #eee;
+    margin-top: 20px;
+}

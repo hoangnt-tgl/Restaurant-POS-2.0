@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #ffffff;
+    color: #5a5a5a;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* REUSABLE */
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Header */
+
+#body-header {
+    background-color: rgba(87, 187, 184, 0.7);
+    background-size: cover;
+    height: 20vh;
+}
+
+.logo {
+    width: 150px;
+    height: 20vh;
+    width: 25%;
+    float: left;
+}
+
+
+/* Product */
+
+.product-infor {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.product-label {
+    color: black;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 70px;
+    font-size: 125%;
+    font-weight: 500;
+}
+
+.food-picture::-webkit-file-upload-button {
+    color: #ffffff;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.8);
+    font-size: 150%;
+}
+
+.food-picture {
+    color: red;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.food-ID,
+.food-name,
+.food-price,
+.food-ammount {
+    color: black;
+    cursor: text;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 125%;
+    font-weight: 500;
+    text-align: center;
+}
+
+.food-decription {
+    color: black;
+    cursor: text;
+    margin-top: 15px;
+    margin-left: 70px;
+    padding: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.save-btn {
+    color: white;
+    cursor: pointer;
+    background-color: #e67e22;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 7px;
+    margin-top: 20px;
+    margin-left: 70px;
+    font-size: 125%;
+    font-weight: 500;
+}
+
+.save-btn:hover,
+.save-btn:active {
+    background-color: #d35400;
+}
+
+
+/* Footer */
+
+.footer {
+    color: #ffffff;
+    height: 20vh;
+}
