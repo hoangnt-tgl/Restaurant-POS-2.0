@@ -12,10 +12,6 @@
 
 <ins>***Note***</ins>: Use the small web app in folder "test_send_data" to send data to Adafruit Server
 
-## How to run
-* Test model - run this command : **npm run dev**
-* Release model - run this command : **npm run start**
-
 ## About
 
 ***Powered by Nova Team***:
@@ -31,14 +27,14 @@
 	+ Final report
 
 * Pham Cong Hau - [haupham1304](https://github.com/haupham1304) :
-  + Display menu
-  + Menu management
-  + Final report
+  	+ Display menu
+  	+ Menu management
+  	+ Final report
 * Nguyen The Huy - [huynguyen-223](https://github.com/huynguyen-223) : 
-  + Cart feature
-  + Pay feature
+  	+ Cart feature
+  	+ Pay feature
 * Nguyen Viet Huy - [thesamurai3011](https://github.com/thesamurai3011) : 
-  + Orther management
-  + Header & Footer
+  	+ Orther management
+  	+ Header & Footer
 * Le Chung Hoang - [HoangLC19](https://github.com/HoangLC19) : 
- + Home page
+  	+ Home page
