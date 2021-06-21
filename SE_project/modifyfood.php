@@ -65,7 +65,7 @@ if(!empty($_POST)){
                 $target_file = $std['Picture'];
             }
         }
-        $sql = "update menu set Name = '$f_name', Price = '$f_price', Ammount = '$f_ammount', Note = '', Picture = '$target_file', Decription = '$f_decription' where ID = " .$f_ID;
+        $sql = "update menu set Name = '$f_name', Price = '$f_price', Ammount = '$f_ammount', Picture = '$target_file', Decription = '$f_decription' where ID = " .$f_ID;
         execute($sql);
         header('Location: managermenu.php');
         die();

@@ -59,7 +59,7 @@ if(!empty($_POST)){
     // Kiểm tra và chuyển file từ bộ nhớ tạm lên sever
     if (empty($error)) {
         move_uploaded_file($_FILES['picture']['tmp_name'], $target_file);
-        $sql = "insert into menu(ID, Name, Price, Ammount, Note, Picture, Decription ) value ('$f_ID','$f_name','$f_price','$f_ammount','','$target_file','$f_decription')";
+        $sql = "insert into menu(ID, Name, Price, Ammount, Picture, Decription ) value ('$f_ID','$f_name','$f_price','$f_ammount','$target_file','$f_decription')";
         execute($sql);
     }
 }
